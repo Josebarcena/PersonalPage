@@ -1,16 +1,22 @@
-import { motion, useScroll, useTransform } from "motion/react";
+import {
+    motion,
+    useTransform,
+} from "motion/react";
+
 import { useRef } from "react";
 
 import type { Language, SiteContent } from "../content/types";
 import HeroContact from "../components/HeroContact.tsx";
+import { useSmoothScrollProgress } from "../components/SmoothScroll";
+
 
 interface HeroProps {
     content: SiteContent;
     language: Language;
     setLanguage: (language: Language) => void;
-
     openMenu: () => void;
 }
+
 
 export default function Hero({
                                  content,
@@ -21,43 +27,31 @@ export default function Hero({
 
     const heroRef = useRef<HTMLElement>(null);
 
-    const { scrollYProgress } = useScroll({
+    const scrollProgress = useSmoothScrollProgress({
         target: heroRef,
         offset: ["start start", "end start"],
     });
 
     const contentOpacity = useTransform(
-        scrollYProgress,
-        [0, 0.35],
+        scrollProgress,
+        [0, 0.30],
         [1, 0]
     );
 
-    const contentY = useTransform(
-        scrollYProgress,
-        [0, 0.4],
-        [0, -80]
-    );
-
     const portraitScale = useTransform(
-        scrollYProgress,
+        scrollProgress,
         [0, 0.65],
-        [1, 1.08]
-    );
-
-    const portraitX = useTransform(
-        scrollYProgress,
-        [0, 0.65],
-        ["0%", "10%"]
+        [1, 1.03]
     );
 
     const portraitOpacity = useTransform(
-        scrollYProgress,
-        [0.45, 0.8],
+        scrollProgress,
+        [0.42, 0.72],
         [1, 0]
     );
 
     const chromeOpacity = useTransform(
-        scrollYProgress,
+        scrollProgress,
         [0, 0.25],
         [1, 0]
     );
@@ -67,15 +61,14 @@ export default function Hero({
             ref={heroRef}
             className="hero"
         >
-
             <div className="hero__sticky">
 
                 <motion.div
                     className="hero__portrait"
                     style={{
                         scale: portraitScale,
-                        x: portraitX,
                         opacity: portraitOpacity,
+                        willChange: "transform, opacity",
                     }}
                 >
                     <img
@@ -89,9 +82,9 @@ export default function Hero({
                     className="hero__header"
                     style={{
                         opacity: chromeOpacity,
+                        willChange: "opacity",
                     }}
                 >
-
                     <span>JOSE BARCENA</span>
 
                     <div className="hero__top-right">
@@ -101,8 +94,8 @@ export default function Hero({
                         >
                             INDEX
                         </button>
-                        <nav className="language-selector">
 
+                        <nav className="language-selector">
                             {(["en", "es", "fr"] as Language[]).map((lang) => (
                                 <button
                                     key={lang}
@@ -116,11 +109,8 @@ export default function Hero({
                                     {lang.toUpperCase()}
                                 </button>
                             ))}
-
                         </nav>
-
                     </div>
-
                 </motion.header>
 
 
@@ -128,10 +118,9 @@ export default function Hero({
                     className="hero__content"
                     style={{
                         opacity: contentOpacity,
-                        y: contentY,
+                        willChange: "opacity",
                     }}
                 >
-
                     <h1 className="hero__title">
                         JOSE
                         <br />
@@ -149,7 +138,6 @@ export default function Hero({
                     </div>
 
                     <HeroContact />
-
                 </motion.div>
 
 
@@ -157,9 +145,9 @@ export default function Hero({
                     className="hero__footer"
                     style={{
                         opacity: chromeOpacity,
+                        willChange: "opacity",
                     }}
                 >
-
                     <span>
                         {content.hero.location}
                     </span>
@@ -169,11 +157,9 @@ export default function Hero({
                     </span>
 
                     <span>2026</span>
-
                 </motion.footer>
 
             </div>
-
         </section>
     );
 }
