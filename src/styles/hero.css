@@ -1,0 +1,390 @@
+/* =========================================================
+   HERO
+   ========================================================= */
+
+/*
+ * The Hero is taller than the viewport.
+ *
+ * This gives Motion some scroll distance while
+ * .hero__sticky remains fixed on screen.
+ */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    height: 180vh;
+
+    background: var(--background);
+}
+
+.hero__sticky {
+    position: sticky;
+
+    top: 0;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+
+    overflow: hidden;
+
+    background: var(--background);
+}
+
+
+/* =========================================================
+   HERO — PORTRAIT
+   ========================================================= */
+
+.hero__portrait {
+    position: absolute;
+
+    z-index: 1;
+
+    top: 0;
+    right: 0;
+
+    width: 65%;
+    height: 100%;
+
+    overflow: hidden;
+
+    /*
+     * Horizontal fade:
+     *
+     * invisible → photograph
+     */
+
+    -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            transparent 8%,
+            rgba(0, 0, 0, 0.15) 18%,
+            rgba(0, 0, 0, 0.55) 32%,
+            black 50%
+    );
+
+    mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            transparent 8%,
+            rgba(0, 0, 0, 0.15) 18%,
+            rgba(0, 0, 0, 0.55) 32%,
+            black 50%
+    );
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.hero__portrait img {
+    position: absolute;
+
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /*
+     * Change ONLY this value if we need
+     * to reposition you inside the photograph.
+     *
+     * 50% = centered
+     * 60% = move crop slightly
+     * 70% = move crop further
+     */
+
+    object-position: 50% center;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO — HEADER
+   ========================================================= */
+
+.hero__header {
+    position: absolute;
+
+    z-index: 10;
+
+    top: var(--page-padding);
+    left: var(--page-padding);
+    right: var(--page-padding);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+}
+
+.hero__top-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+}
+
+
+/* =========================================================
+   HERO — MAIN CONTENT
+   ========================================================= */
+
+.hero__content {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 50%;
+    left: var(--page-padding);
+
+    transform: translateY(-50%);
+
+    width: min(42vw, 620px);
+}
+
+.hero__title {
+    margin: 0;
+
+    font-size: clamp(64px, 6vw, 115px);
+    font-weight: 700;
+
+    line-height: 0.84;
+
+    letter-spacing: -0.06em;
+}
+
+.hero__intro {
+    margin-top: 42px;
+
+    max-width: 360px;
+
+    font-size: 14px;
+    line-height: 1.45;
+
+    letter-spacing: -0.01em;
+}
+
+.hero__intro p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   HERO — FOOTER
+   ========================================================= */
+
+.hero__footer {
+    position: absolute;
+
+    z-index: 10;
+
+    bottom: var(--page-padding);
+    left: var(--page-padding);
+    right: var(--page-padding);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+}
+
+.hero__scroll {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+/* =========================================================
+   HERO CONTACT
+   ========================================================= */
+
+.hero-contact {
+    margin-top: 48px;
+
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.hero-contact__label {
+    margin-bottom: 14px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    line-height: 1;
+    letter-spacing: 0.14em;
+
+    opacity: 0.95;
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+   ========================================================= */
+
+.hero-contact__details {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+}
+
+.hero-contact__details a {
+    position: relative;
+
+    color: inherit;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    line-height: 1.35;
+    letter-spacing: 0.025em;
+
+    text-decoration: none;
+
+    opacity: 0.55;
+
+    transition: opacity 180ms ease;
+}
+
+.hero-contact__details a:hover {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.hero-contact__bottom {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+   ========================================================= */
+
+.hero-contact__socials {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.hero-contact__socials a {
+    width: 17px;
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: inherit;
+
+    opacity: 0.4;
+
+    transition:
+            opacity 180ms ease,
+            transform 180ms ease;
+}
+
+.hero-contact__socials a:hover {
+    opacity: 1;
+
+    transform: translateY(-2px);
+}
+
+.hero-contact__socials svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   CV
+   ========================================================= */
+
+.hero-contact__cv {
+    padding-bottom: 3px;
+
+    color: inherit;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: 0.12em;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid currentColor;
+
+    opacity: 0.42;
+
+    transition: opacity 180ms ease;
+}
+
+.hero-contact__cv:hover {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero-contact {
+        margin-top: 34px;
+    }
+
+    .hero-contact__bottom {
+        margin-top: 16px;
+    }
+
+}

@@ -1,0 +1,9 @@
+:root {
+    --background: #f4f3ef;
+    --foreground: #111111;
+    --muted: #777777;
+
+    --page-padding: 32px;
+
+    --font-sans: Arial, Helvetica, sans-serif;
+}

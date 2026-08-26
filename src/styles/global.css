@@ -1,0 +1,93 @@
+@import "./variables.css";
+
+@import "./hero.css";
+@import "./story.css";
+@import "./switzerland.css";
+@import "./menu.css";
+@import "./responsive.css";
+@import "./projects.css";
+
+/* =========================================================
+   RESET / GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: var(--background);
+    color: var(--foreground);
+
+    font-family: var(--font-sans);
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+/* =========================================================
+   LANGUAGE SELECTOR
+   ========================================================= */
+
+.language-selector {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+.language-selector__button {
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+
+    letter-spacing: inherit;
+
+    opacity: 0.3;
+
+    cursor: pointer;
+
+    transition:
+            opacity 180ms ease,
+            transform 180ms ease;
+}
+
+.language-selector__button:hover {
+    opacity: 0.65;
+}
+
+.language-selector__button:active {
+    transform: translateY(1px);
+}
+
+.language-selector__button--active {
+    opacity: 1;
+}

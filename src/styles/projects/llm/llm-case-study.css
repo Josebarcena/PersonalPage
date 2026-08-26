@@ -1,0 +1,40 @@
+@import "./llm-hero.css";
+@import "./llm-question.css";
+@import "./llm-saturation.css";
+@import "./llm-padding.css";
+@import "./llm-comparison.css";
+@import "./llm-measurement.css";
+@import "./llm-outcome.css";
+@import "./llm-responsive.css";
+
+
+/* =========================================================
+   LLM CASE STUDY — GLOBAL
+   ========================================================= */
+
+.llm-case {
+    position: relative;
+
+    width: 100%;
+
+    background: var(--background);
+    color: var(--foreground);
+}
+
+
+/* Shared section index */
+
+.llm-section-index {
+    display: block;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    opacity: 0.45;
+}

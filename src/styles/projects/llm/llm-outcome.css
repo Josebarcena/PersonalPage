@@ -1,0 +1,135 @@
+/* =========================================================
+   OUTCOME
+   ========================================================= */
+
+.llm-outcome {
+    position: relative;
+
+    min-height: 110vh;
+
+    padding:
+            15vh
+            var(--page-padding)
+            7vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--background);
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.llm-outcome h2 {
+    width: min(1200px, 90vw);
+
+    margin:
+            13vh
+            0
+            0;
+
+    font-size: clamp(65px, 8.5vw, 155px);
+    font-weight: 700;
+
+    line-height: 0.79;
+    letter-spacing: -0.075em;
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.llm-outcome__bottom {
+    margin-top: 13vh;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(220px, 0.65fr)
+        minmax(360px, 0.65fr);
+
+    justify-content: space-between;
+
+    gap: 10vw;
+}
+
+
+/* Stack */
+
+.llm-outcome__stack {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 7px;
+}
+
+.llm-outcome__stack span {
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+
+    opacity: 0.45;
+}
+
+
+/* Copy */
+
+.llm-outcome__copy {
+    width: min(100%, 470px);
+
+    justify-self: end;
+}
+
+.llm-outcome__copy p {
+    margin: 0;
+
+    font-size: clamp(15px, 1.05vw, 18px);
+
+    line-height: 1.6;
+}
+
+.llm-outcome__copy p + p {
+    margin-top: 28px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.llm-outcome footer {
+    margin-top: auto;
+    padding-top: 12vh;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.llm-outcome footer a {
+    padding-bottom: 5px;
+
+    color: inherit;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+
+    text-decoration: none;
+
+    border-bottom:
+            1px solid currentColor;
+
+    transition: opacity 180ms ease;
+}
+
+.llm-outcome footer a:hover {
+    opacity: 0.5;
+}

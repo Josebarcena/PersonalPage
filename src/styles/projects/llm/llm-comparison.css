@@ -1,0 +1,158 @@
+/* =========================================================
+   STATIC VS CONTINUOUS
+   ========================================================= */
+
+.llm-comparison {
+    position: relative;
+
+    min-height: 120vh;
+
+    padding:
+            15vh
+            var(--page-padding);
+
+    overflow: hidden;
+
+    background: var(--foreground);
+    color: var(--background);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.llm-comparison__header {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 10vh;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(300px, 0.45fr);
+
+    gap: 8vw;
+}
+
+.llm-comparison__header h2 {
+    max-width: 900px;
+
+    margin: 0;
+
+    font-size: clamp(62px, 7.5vw, 135px);
+    font-weight: 700;
+
+    line-height: 0.8;
+    letter-spacing: -0.07em;
+}
+
+.llm-comparison__header p {
+    width: min(100%, 410px);
+
+    margin: 0;
+
+    align-self: end;
+
+    font-size: clamp(14px, 1vw, 17px);
+
+    line-height: 1.55;
+
+    opacity: 0.58;
+}
+
+
+/* =========================================================
+   2.73X
+   ========================================================= */
+
+.llm-comparison__result {
+    position: absolute;
+
+    top: 39%;
+    right: -1vw;
+
+    z-index: 0;
+
+    font-size: clamp(150px, 26vw, 500px);
+    font-weight: 700;
+
+    line-height: 0.7;
+    letter-spacing: -0.09em;
+
+    opacity: 0.055;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.backend-comparison {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 16vh;
+
+    width: 100%;
+}
+
+.backend-comparison__header,
+.backend-comparison__row {
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 1.3fr)
+        minmax(180px, 1fr)
+        minmax(180px, 1fr);
+
+    align-items: center;
+
+    column-gap: 40px;
+}
+
+.backend-comparison__header {
+    padding-bottom: 18px;
+
+    border-bottom:
+            1px solid
+            rgba(244, 243, 239, 0.28);
+}
+
+.backend-comparison__header strong {
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+
+    opacity: 0.45;
+}
+
+.backend-comparison__row {
+    min-height: 105px;
+
+    border-bottom:
+            1px solid
+            rgba(244, 243, 239, 0.15);
+}
+
+.backend-comparison__row span {
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.38;
+}
+
+.backend-comparison__row strong {
+    font-size: clamp(20px, 2vw, 34px);
+    font-weight: 500;
+
+    letter-spacing: -0.035em;
+}

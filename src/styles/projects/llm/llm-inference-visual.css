@@ -1,0 +1,352 @@
+/* =========================================================
+   LLM INFERENCE VISUAL
+   ========================================================= */
+
+.llm-visual {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--foreground);
+    color: var(--background);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.llm-visual__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 18px;
+
+    border-bottom:
+            1px solid
+            rgba(244, 243, 239, 0.18);
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    opacity: 0.55;
+}
+
+.llm-visual__status {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.llm-visual__status-dot {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    animation:
+            llm-status-pulse
+            1.8s
+            ease-in-out
+            infinite;
+}
+
+@keyframes llm-status-pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   PRIMARY METRIC
+   ========================================================= */
+
+.llm-visual__primary {
+    margin-top: 36px;
+}
+
+.llm-visual__label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    opacity: 0.4;
+}
+
+.llm-visual__throughput {
+    display: flex;
+    align-items: baseline;
+
+    gap: 14px;
+}
+
+.llm-visual__throughput strong {
+    font-size: clamp(48px, 5vw, 82px);
+    font-weight: 600;
+
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+}
+
+.llm-visual__throughput span {
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   CHART
+   ========================================================= */
+
+.llm-visual__chart {
+    position: relative;
+
+    margin-top: 28px;
+
+    height: 120px;
+}
+
+.llm-visual__chart svg {
+    width: 100%;
+    height: 85px;
+
+    opacity: 0.65;
+}
+
+.llm-visual__chart-axis {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 7px;
+
+    border-top:
+            1px solid
+            rgba(244, 243, 239, 0.14);
+
+    font-size: 7px;
+
+    opacity: 0.3;
+}
+
+.llm-visual__chart-caption {
+    position: absolute;
+
+    right: 0;
+    bottom: -15px;
+
+    font-size: 7px;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    opacity: 0.3;
+}
+
+
+/* =========================================================
+   METRICS
+   ========================================================= */
+
+.llm-visual__metrics {
+    margin-top: 38px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-top:
+            1px solid
+            rgba(244, 243, 239, 0.16);
+}
+
+.llm-visual__metric {
+    padding: 13px 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom:
+            1px solid
+            rgba(244, 243, 239, 0.16);
+}
+
+.llm-visual__metric:nth-child(odd) {
+    padding-right: 18px;
+}
+
+.llm-visual__metric:nth-child(even) {
+    padding-left: 18px;
+
+    border-left:
+            1px solid
+            rgba(244, 243, 239, 0.16);
+}
+
+.llm-visual__metric span {
+    font-size: 7px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.35;
+}
+
+.llm-visual__metric strong {
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   BACKEND COMPARISON
+   ========================================================= */
+
+.llm-visual__comparison {
+    margin-top: 28px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 28px;
+}
+
+.llm-visual__comparison > div {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto;
+
+    align-items: end;
+
+    row-gap: 5px;
+}
+
+.llm-visual__comparison span {
+    grid-column: 1 / 3;
+
+    font-size: 7px;
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+
+    opacity: 0.4;
+}
+
+.llm-visual__comparison strong {
+    font-size: 20px;
+    font-weight: 600;
+
+    letter-spacing: -0.04em;
+}
+
+.llm-visual__comparison small {
+    font-size: 7px;
+
+    opacity: 0.35;
+}
+
+.llm-visual__bar {
+    grid-column: 1 / 3;
+
+    height: 2px;
+
+    margin-top: 7px;
+
+    background: currentColor;
+
+    transform-origin: left center;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.llm-visual__footer {
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 7px;
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+
+    opacity: 0.3;
+}
+
+.project__benchmark-result {
+    position: absolute;
+
+    right: 1vw;
+    bottom: 3vh;
+
+    z-index: 0;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 18px;
+
+    pointer-events: none;
+}
+
+.project__benchmark-result strong {
+    font-size: clamp(90px, 13vw, 220px);
+    font-weight: 700;
+
+    line-height: 0.7;
+    letter-spacing: -0.08em;
+
+    opacity: 0.055;
+}
+
+.project__benchmark-result span {
+    margin-bottom: 5px;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+
+    opacity: 0.18;
+}

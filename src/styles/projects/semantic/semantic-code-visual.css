@@ -1,0 +1,440 @@
+/* =========================================================
+   SEMANTIC CODE INTELLIGENCE — VISUAL
+   ========================================================= */
+
+.semantic-visual {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 28px 28px 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: var(--foreground);
+    color: var(--background);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.semantic-visual__header {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 18px;
+
+    border-bottom:
+            1px solid
+            rgba(244, 243, 239, 0.18);
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    opacity: 0.42;
+}
+
+
+/* =========================================================
+   QUERY
+   ========================================================= */
+
+.semantic-visual__query {
+    position: relative;
+    z-index: 3;
+
+    padding:
+            38px
+            0
+            30px;
+}
+
+.semantic-visual__label {
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    opacity: 0.35;
+}
+
+.semantic-visual__query p {
+    max-width: 430px;
+
+    margin: 0;
+
+    font-size: clamp(20px, 1.75vw, 29px);
+    font-weight: 500;
+
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+}
+
+
+/* =========================================================
+   PIPELINE
+   ========================================================= */
+
+.semantic-visual__pipeline {
+    position: relative;
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    border-top:
+            1px solid
+            rgba(244, 243, 239, 0.18);
+
+    border-bottom:
+            1px solid
+            rgba(244, 243, 239, 0.18);
+}
+
+.semantic-visual__pipeline-step {
+    position: relative;
+
+    min-width: 0;
+
+    padding:
+            16px
+            8px
+            16px
+            0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.semantic-visual__pipeline-step:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    right: 8px;
+
+    width: 12px;
+    height: 1px;
+
+    background:
+            rgba(244, 243, 239, 0.25);
+}
+
+.semantic-visual__pipeline-step span {
+    font-size: 7px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.3;
+}
+
+.semantic-visual__pipeline-step strong {
+    font-size: clamp(8px, 0.65vw, 10px);
+    font-weight: 600;
+
+    letter-spacing: 0.09em;
+}
+
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.semantic-visual__results {
+    position: relative;
+    z-index: 3;
+
+    margin-top: 30px;
+}
+
+.semantic-visual__results-header {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 10px;
+
+    font-size: 7px;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    opacity: 0.3;
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.semantic-result {
+    min-height: 66px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-top:
+            1px solid
+            rgba(244, 243, 239, 0.13);
+}
+
+.semantic-result:last-child {
+    border-bottom:
+            1px solid
+            rgba(244, 243, 239, 0.13);
+}
+
+.semantic-result__content {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.semantic-result__content span {
+    overflow: hidden;
+
+    font-family:
+            "SFMono-Regular",
+            Consolas,
+            "Liberation Mono",
+            monospace;
+
+    font-size: clamp(9px, 0.7vw, 11px);
+
+    line-height: 1.2;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    opacity: 0.52;
+}
+
+.semantic-result__content strong {
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.82;
+}
+
+.semantic-result__score {
+    font-family:
+            "SFMono-Regular",
+            Consolas,
+            "Liberation Mono",
+            monospace;
+
+    font-size: 10px;
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   LANGUAGES
+   ========================================================= */
+
+.semantic-visual__languages {
+    position: relative;
+    z-index: 3;
+
+    margin-top: auto;
+    padding-top: 26px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:
+            8px
+            20px;
+}
+
+.semantic-visual__languages span {
+    font-size: 7px;
+    font-weight: 600;
+
+    letter-spacing: 0.11em;
+
+    opacity: 0.32;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.semantic-visual__footer {
+    position: relative;
+    z-index: 3;
+
+    margin-top: 24px;
+    padding-top: 15px;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top:
+            1px solid
+            rgba(244, 243, 239, 0.15);
+
+    font-size: 7px;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    opacity: 0.32;
+}
+
+
+/* =========================================================
+   DECORATIVE SEMANTIC GRAPH
+   ========================================================= */
+
+.semantic-visual::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 0;
+
+    width: 330px;
+    height: 330px;
+
+    top: 22%;
+    right: -170px;
+
+    border:
+            1px solid
+            rgba(244, 243, 239, 0.05);
+
+    border-radius: 50%;
+
+    box-shadow:
+            0 0 0 55px
+            rgba(244, 243, 239, 0.018),
+            0 0 0 110px
+            rgba(244, 243, 239, 0.012);
+
+    pointer-events: none;
+}
+
+.semantic-visual::after {
+    content: "AST     SYMBOL     VECTOR     INDEX     RETRIEVAL";
+
+    position: absolute;
+
+    z-index: 0;
+
+    right: -100px;
+    bottom: 34%;
+
+    font-family:
+            "SFMono-Regular",
+            Consolas,
+            "Liberation Mono",
+            monospace;
+
+    font-size: 30px;
+
+    letter-spacing: 0.08em;
+
+    white-space: nowrap;
+
+    color: var(--background);
+
+    opacity: 0.018;
+
+    transform: rotate(-90deg);
+
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .semantic-visual {
+        padding:
+                24px
+                20px;
+    }
+
+    .semantic-visual__query {
+        padding:
+                32px
+                0
+                26px;
+    }
+
+    .semantic-visual__query p {
+        font-size: 22px;
+    }
+
+    .semantic-visual__pipeline {
+        grid-template-columns:
+            repeat(5, minmax(52px, 1fr));
+
+        overflow: hidden;
+    }
+
+    .semantic-visual__pipeline-step {
+        padding:
+                14px
+                4px
+                14px
+                0;
+    }
+
+    .semantic-visual__pipeline-step strong {
+        font-size: 7px;
+    }
+
+    .semantic-result {
+        min-height: 62px;
+    }
+
+    .semantic-visual__languages {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+}

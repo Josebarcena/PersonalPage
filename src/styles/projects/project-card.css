@@ -1,0 +1,53 @@
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
+.projects {
+    position: relative;
+    width: 100%;
+
+    padding:
+            18vh
+            var(--page-padding)
+            14vh;
+
+    background: var(--background);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.projects__header {
+    position: relative;
+
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.projects__index {
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+}
+
+.projects__heading {
+    margin: 0;
+
+    max-width: 1000px;
+
+    font-size: clamp(64px, 9vw, 155px);
+    font-weight: 700;
+
+    line-height: 0.78;
+    letter-spacing: -0.07em;
+}
+
+.projects__list {
+    width: 100%;
+}

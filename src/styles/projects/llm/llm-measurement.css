@@ -1,0 +1,83 @@
+/* =========================================================
+   MEASUREMENT
+   ========================================================= */
+
+.llm-measurement {
+    position: relative;
+
+    min-height: 105vh;
+
+    padding:
+            15vh
+            var(--page-padding);
+
+    display: grid;
+
+    grid-template-columns:
+        1.25fr
+        0.75fr;
+
+    grid-template-rows:
+        auto
+        1fr;
+
+    column-gap: 8vw;
+
+    overflow: hidden;
+
+    background: var(--background);
+}
+
+
+/* =========================================================
+   VALUE
+   ========================================================= */
+
+.llm-measurement__value {
+    grid-column: 1;
+    grid-row: 2;
+
+    align-self: center;
+
+    font-size: clamp(150px, 23vw, 430px);
+    font-weight: 700;
+
+    line-height: 0.68;
+    letter-spacing: -0.095em;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.llm-measurement__content {
+    grid-column: 2;
+    grid-row: 2;
+
+    align-self: center;
+
+    max-width: 470px;
+}
+
+.llm-measurement__content h2 {
+    margin: 0;
+
+    font-size: clamp(35px, 3.6vw, 64px);
+    font-weight: 700;
+
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+}
+
+.llm-measurement__content p {
+    margin: 42px 0 0;
+
+    max-width: 400px;
+
+    font-size: clamp(14px, 1vw, 17px);
+
+    line-height: 1.6;
+
+    opacity: 0.62;
+}

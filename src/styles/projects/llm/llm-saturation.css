@@ -1,0 +1,174 @@
+/* =========================================================
+   SATURATION
+   ========================================================= */
+
+.llm-saturation {
+    position: relative;
+
+    min-height: 115vh;
+
+    padding:
+            15vh
+            var(--page-padding);
+
+    background: var(--foreground);
+    color: var(--background);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.llm-saturation__header {
+    margin-top: 12vh;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.3fr)
+        minmax(300px, 0.45fr);
+
+    gap: 8vw;
+}
+
+.llm-saturation__header h2 {
+    max-width: 900px;
+
+    margin: 0;
+
+    font-size: clamp(58px, 7vw, 125px);
+    font-weight: 700;
+
+    line-height: 0.82;
+    letter-spacing: -0.065em;
+}
+
+.llm-saturation__header p {
+    width: min(100%, 400px);
+
+    margin: 0;
+
+    align-self: end;
+
+    font-size: clamp(14px, 1vw, 17px);
+
+    line-height: 1.55;
+
+    opacity: 0.58;
+}
+
+
+/* =========================================================
+   CHART
+   ========================================================= */
+
+.saturation-chart {
+    height: 46vh;
+    min-height: 390px;
+
+    margin-top: 13vh;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 2px;
+
+    border-bottom:
+            1px solid
+            rgba(244, 243, 239, 0.24);
+}
+
+.saturation-chart__column {
+    position: relative;
+
+    display: grid;
+
+    grid-template-rows:
+        30px
+        1fr
+        35px;
+}
+
+.saturation-chart__value {
+    align-self: start;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.1em;
+
+    opacity: 0.45;
+}
+
+.saturation-chart__track {
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+
+    border-left:
+            1px solid
+            rgba(244, 243, 239, 0.11);
+}
+
+.saturation-chart__bar {
+    width: 100%;
+
+    background:
+            rgba(244, 243, 239, 0.92);
+}
+
+.saturation-chart__concurrency {
+    align-self: end;
+
+    padding-bottom: 9px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.4;
+}
+
+
+/* =========================================================
+   TRADEOFF
+   ========================================================= */
+
+.saturation-tradeoff {
+    margin-top: 7vh;
+
+    padding-top: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        repeat(3, 1fr);
+
+    gap: 24px;
+
+    border-top:
+            1px solid
+            rgba(244, 243, 239, 0.2);
+}
+
+.saturation-tradeoff span,
+.saturation-tradeoff strong {
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.1em;
+}
+
+.saturation-tradeoff span {
+    opacity: 0.4;
+}
+
+.saturation-tradeoff strong {
+    text-align: right;
+}
