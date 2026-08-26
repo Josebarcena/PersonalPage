@@ -15,18 +15,12 @@ export default function LlmOutcome({
     return (
         <section className="llm-outcome">
 
-            <span className="llm-section-index">
-                {text.outcome.section}
-            </span>
+            <span className="llm-section-index">{text.outcome.section}</span>
 
-            <h2>
-                {text.outcome.title}
-            </h2>
+            <h2>{text.outcome.title}</h2>
 
             <div className="llm-outcome__bottom">
-
                 <div className="llm-outcome__stack">
-
                     <span>PYTHON</span>
                     <span>PYTORCH</span>
                     <span>TRANSFORMERS</span>
@@ -35,22 +29,15 @@ export default function LlmOutcome({
                     <span>NVIDIA</span>
                     <span>ASYNCIO</span>
                     <span>GPU TELEMETRY</span>
-
                 </div>
-
 
                 <div className="llm-outcome__copy">
 
                     {text.outcome.paragraphs.map(
                         (paragraph, index) => (
-
-                            <p key={index}>
-                                {paragraph}
-                            </p>
-
+                            <p key={index}>{paragraph}</p>
                         )
                     )}
-
                 </div>
 
             </div>
@@ -63,11 +50,11 @@ export default function LlmOutcome({
                     target="_blank"
                     rel="noreferrer"
                 >
-                    {text.source} ↗
+                    <span>02</span> {text.source}
                 </a>
 
                 <Link to="/">
-                    ← {text.back}
+                    <span>00</span> {text.back}
                 </Link>
             </footer>
 

@@ -57,11 +57,11 @@ export default function TptpOutcome({
                     target="_blank"
                     rel="noreferrer"
                 >
-                    {text.source} ↗
+                    <span className="tptp__link-index">02</span> {text.source}
                 </a>
 
                 <Link to="/">
-                    ← {text.back}
+                    <span className="tptp__link-index">00</span> {text.back}
                 </Link>
 
             </footer>

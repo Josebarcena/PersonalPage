@@ -30,28 +30,27 @@ export default function Hero({
 
     const contentOpacity = useTransform(
         scrollProgress,
-        [0, 0.30],
+        [0, 0.20],
         [1, 0]
     );
 
     const portraitScale = useTransform(
         scrollProgress,
-        [0, 0.65],
+        [0, 0.45],
         [1, 1.03]
     );
 
     const portraitOpacity = useTransform(
         scrollProgress,
-        [0.42, 0.72],
+        [0.28, 0.50],
         [1, 0]
     );
 
     const chromeOpacity = useTransform(
         scrollProgress,
-        [0, 0.25],
+        [0, 0.16],
         [1, 0]
     );
-
     return (
         <section
             ref={heroRef}

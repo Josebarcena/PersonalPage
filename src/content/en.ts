@@ -105,7 +105,7 @@ export const en: SiteContent = {
         description:
             "A short story about the places and experiences that shaped the work that follows.",
         read: "KEEP READING",
-        skip: "SKIP TO WORK",
+        skip: "SKIP TO PROJECTS",
     },
 
     work: {

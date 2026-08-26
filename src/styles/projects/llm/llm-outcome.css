@@ -106,34 +106,65 @@
    ========================================================= */
 
 .llm-outcome footer {
-    width: 100%;
+    position: absolute;
 
-    margin-top: auto;
-    padding-top: 8vh;
+    left: 22px;
+    right: 22px;
+    bottom: 18px;
+
+    z-index: 3;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    gap: 26px;
+
+    color: #111;
+
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+
+    opacity: 1;
 }
 
 .llm-outcome footer a {
-    padding-bottom: 5px;
+    display: inline-flex;
+    align-items: baseline;
+    
+    gap: 14px;
 
-    color: inherit;
+    color: #111;
 
+    font-family: "Arial Narrow", "Roboto Condensed", sans-serif;
     font-size: 10px;
     font-weight: 600;
 
     letter-spacing: 0.13em;
+    text-transform: uppercase;
 
     text-decoration: none;
 
-    border-bottom:
-            1px solid currentColor;
+    opacity: 0.55;
 
-    transition: opacity 180ms ease;
+    transition:
+            opacity 180ms ease,
+            transform 180ms ease;
 }
 
 .llm-outcome footer a:hover {
-    opacity: 0.5;
+    opacity: 1;
+    transform: translateX(2px);
+}
+
+.llm__link-index {
+    min-width: 18px;
+
+    font-size: 9px;
+    font-weight: 400;
+
+    letter-spacing: 0.04em;
+
+    opacity: 0.4;
 }
