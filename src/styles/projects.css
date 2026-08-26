@@ -371,7 +371,6 @@ before project__detail, remove the extra margin.
 
 .code-background {
     position: absolute;
-
     z-index: 0;
 
     inset: 0;
@@ -393,33 +392,40 @@ before project__detail, remove the extra margin.
             "Liberation Mono",
             monospace;
 
-    font-size: clamp(28px, 2.6vw, 48px);
     font-weight: 400;
 
-    line-height: 1.45;
-
+    line-height: 1.55;
     letter-spacing: -0.035em;
 
     color: var(--foreground);
 
-    /*
-       Background decoration, not readable content.
-    */
-    opacity: 0.065;
-
     white-space: pre;
+
+    pointer-events: none;
 }
 
-.code-background__block--top {
-    top: 5%;
-    right: -1%;
+.code-background__block--tptp {
+    top: -3%;
+    left: 1.5%;
 
-    transform: rotate(1deg);
+    width: 31vw;
+
+    font-size: clamp(22px, 1.75vw, 34px);
+
+    opacity: 0.055;
+
+    transform: rotate(-0.4deg);
 }
 
-.code-background__block--bottom {
-    right: 2%;
-    bottom: 3%;
+.code-background__block--pvs {
+    right: -2%;
+    bottom: -5%;
 
-    transform: rotate(-1deg);
+    width: 34vw;
+
+    font-size: clamp(22px, 1.75vw, 34px);
+
+    opacity: 0.055;
+
+    transform: rotate(0.4deg);
 }

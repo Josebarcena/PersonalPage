@@ -13,48 +13,50 @@ export default function CodeBackground({
                 aria-hidden="true"
             >
 
-                <pre className="code-background__block code-background__block--top">
-{`fof(axiom_01, axiom,
-    ![X,Y] :
+                {/* TPTP INPUT */}
+                <pre className="
+                    code-background__block
+                    code-background__block--tptp
+                ">
+{`fof(socrates_mortal, axiom,
+    ![X] :
         (human(X) => mortal(X))
 ).
 
-cnf(clause_02, plain,
-    ~p(X) | q(X)
+fof(socrates_human, axiom,
+    human(socrates)
 ).
 
 fof(conjecture_01, conjecture,
-    ?[X] :
-        (mortal(X) & human(X))
+    mortal(socrates)
 ).`}
                 </pre>
 
 
-                <pre className="code-background__block code-background__block--middle">
-{`lexer
-    ↓
-parser
-    ↓
-syntax_tree
-    ↓
-semantic_analysis
-    ↓
-type_validation
-    ↓
-source_generation`}
-                </pre>
-
-
-                <pre className="code-background__block code-background__block--bottom">
-{`theory_01: THEORY
+                {/* PVS OUTPUT */}
+                <pre className="
+                    code-background__block
+                    code-background__block--pvs
+                ">
+{`socrates_mortal: THEORY
 
 BEGIN
 
+    human: [T -> bool]
+    mortal: [T -> bool]
+
     axiom_01: AXIOM
         FORALL (x: T):
-            human(x) => mortal(x)
+            human(x) =>
+            mortal(x)
 
-END theory_01`}
+    socrates_human: AXIOM
+        human(socrates)
+
+    conjecture_01: CONJECTURE
+        mortal(socrates)
+
+END socrates_mortal`}
                 </pre>
 
             </div>
