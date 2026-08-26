@@ -50,7 +50,7 @@
     .hero__location-bottom {
         justify-self: start;
     }
-    
+
     .hero__scroll {
         position: static;
 
@@ -104,14 +104,14 @@
 
         white-space: normal;
     }
-{
-    box-sizing: border-box;
+    .story__biography-position{
+        box-sizing: border-box;
 
-    width: 100%;
-    height: 100%;
+        width: 100%;
+        height: 100%;
 
-    padding: 10vh 24px 8vh;
-}
+        padding: 10vh 24px 8vh;
+    }
 
     .story__biography {
         width: 100%;
