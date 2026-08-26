@@ -65,25 +65,25 @@ export default function Story({ content }: StoryProps) {
 
     const curiosityOpacity = useTransform(
         scrollYProgress,
-        [0.18, 0.24, 0.38, 0.44],
+        [0.28, 0.34, 0.43, 0.49],
         [0, 1, 1, 0]
     );
 
     const curiosityY = useTransform(
         scrollYProgress,
-        [0.18, 0.44],
+        [0.28, 0.49],
         [80, -80]
     );
 
     const biographyOpacity = useTransform(
         scrollYProgress,
-        [0.48, 0.54, 0.88, 0.94],
+        [0.51, 0.57, 0.88, 0.94],
         [0, 1, 1, 0]
     );
 
     const biographyY = useTransform(
         scrollYProgress,
-        [0.48, 0.54, 0.88, 0.94],
+        [0.51, 0.57, 0.88, 0.94],
         [60, 0, 0, -60]
     );
 
