@@ -3,7 +3,10 @@ import {
     useTransform,
 } from "motion/react";
 
-import { useRef } from "react";
+import {
+    useRef,
+    type RefObject,
+} from "react";
 
 import type { SiteContent } from "../content/types";
 import { useSmoothScrollProgress } from "../components/SmoothScroll.tsx";
@@ -11,13 +14,21 @@ import { useSmoothScrollProgress } from "../components/SmoothScroll.tsx";
 
 interface StoryProps {
     content: SiteContent;
+    scrollContainer?: RefObject<HTMLElement | null>;
 }
 
-export default function Story({ content }: StoryProps) {
+
+export default function Story({
+                                  content,
+                                  scrollContainer,
+                              }: StoryProps) {
+
     const storyRef = useRef<HTMLElement>(null);
 
     const scrollProgress = useSmoothScrollProgress({
         target: storyRef,
+        container: scrollContainer,
+        offset: ["start start", "end end"],
     });
 
     const backgroundOpacity = useTransform(
@@ -93,6 +104,7 @@ export default function Story({ content }: StoryProps) {
             className="story"
         >
             <div className="story__sticky">
+
                 <motion.div
                     className="story__background"
                     style={{
@@ -126,9 +138,7 @@ export default function Story({ content }: StoryProps) {
                         willChange: "transform, opacity",
                     }}
                 >
-                    <h2>
-                        {content.story.place}
-                    </h2>
+                    <h2>{content.story.place}</h2>
 
                     <span>
                         {content.story.country}
@@ -162,10 +172,21 @@ export default function Story({ content }: StoryProps) {
                             willChange: "transform, opacity",
                         }}
                     >
-                        <span>{content.story.curiosityStatement.line1}</span>
-                        <span>{content.story.curiosityStatement.line2}</span>
-                        <span>{content.story.curiosityStatement.line3}</span>
-                        <span>{content.story.curiosityStatement.line4}</span>
+                        <span>
+                            {content.story.curiosityStatement.line1}
+                        </span>
+
+                        <span>
+                            {content.story.curiosityStatement.line2}
+                        </span>
+
+                        <span>
+                            {content.story.curiosityStatement.line3}
+                        </span>
+
+                        <span>
+                            {content.story.curiosityStatement.line4}
+                        </span>
                     </motion.div>
                 </div>
 
@@ -189,17 +210,23 @@ export default function Story({ content }: StoryProps) {
                         <aside className="story__biography-notes">
                             <div className="story__note">
                                 <strong>ASOC</strong>
-                                <span>{content.story.biography.asoc}</span>
+                                <span>
+                                    {content.story.biography.asoc}
+                                </span>
                             </div>
 
                             <div className="story__note">
                                 <strong>MENTOR</strong>
-                                <span>{content.story.biography.mentor}</span>
+                                <span>
+                                    {content.story.biography.mentor}
+                                </span>
                             </div>
 
                             <div className="story__note">
                                 <strong>STUDENT COUNCIL</strong>
-                                <span>{content.story.biography.council}</span>
+                                <span>
+                                    {content.story.biography.council}
+                                </span>
                             </div>
                         </aside>
 
@@ -208,6 +235,7 @@ export default function Story({ content }: StoryProps) {
                         </p>
                     </motion.div>
                 </div>
+
             </div>
         </section>
     );

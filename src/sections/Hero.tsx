@@ -5,23 +5,19 @@ import {
 
 import { useRef } from "react";
 
-import type { Language, SiteContent } from "../content/types";
+import type { SiteContent } from "../content/types";
 import HeroContact from "../components/HeroContact.tsx";
 import { useSmoothScrollProgress } from "../components/SmoothScroll";
 
 
 interface HeroProps {
     content: SiteContent;
-    language: Language;
-    setLanguage: (language: Language) => void;
     openMenu: () => void;
 }
 
 
 export default function Hero({
                                  content,
-                                 language,
-                                 setLanguage,
                                  openMenu,
                              }: HeroProps) {
 
@@ -82,34 +78,17 @@ export default function Hero({
                     className="hero__header"
                     style={{
                         opacity: chromeOpacity,
-                        willChange: "opacity",
                     }}
                 >
-                    <span>JOSE BARCENA</span>
+                    <div className="hero__top-left">
+                        <span>JOSE BARCENA</span>
 
-                    <div className="hero__top-right">
                         <button
                             className="hero__index-button"
                             onClick={openMenu}
                         >
                             INDEX
                         </button>
-
-                        <nav className="language-selector">
-                            {(["en", "es", "fr"] as Language[]).map((lang) => (
-                                <button
-                                    key={lang}
-                                    className={
-                                        language === lang
-                                            ? "language-selector__button language-selector__button--active"
-                                            : "language-selector__button"
-                                    }
-                                    onClick={() => setLanguage(lang)}
-                                >
-                                    {lang.toUpperCase()}
-                                </button>
-                            ))}
-                        </nav>
                     </div>
                 </motion.header>
 

@@ -99,6 +99,15 @@ export const es: SiteContent = {
         contactDescription: "Hablemos",
     },
 
+    storyGate: {
+        label: "CAPÍTULO OPCIONAL",
+        title: "ANTES DE LOS PROYECTOS",
+        description:
+            "Una breve historia sobre los lugares y experiencias que dieron forma al trabajo que viene a continuación.",
+        read: "SEGUIR LEYENDO",
+        skip: "IR A PROYECTOS",
+    },
+    
     work: {
         section: "03 / PROYECTOS",
 

@@ -174,10 +174,10 @@ export default function Projects({
                                ===================================== */}
 
                             <div className="project__links">
-
                                 {project.route && (
                                     <Link to={project.route}>
-                                        {content.work.explore} ↗
+                                        <span className="project__link-index">01</span>
+                                        {content.work.explore}
                                     </Link>
                                 )}
 
@@ -187,10 +187,10 @@ export default function Projects({
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        {content.work.source} ↗
+                                        <span className="project__link-index">02</span>
+                                        {content.work.source}
                                     </a>
                                 )}
-
                             </div>
 
                         </motion.article>

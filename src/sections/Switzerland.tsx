@@ -3,7 +3,10 @@ import {
     useTransform,
 } from "motion/react";
 
-import { useRef } from "react";
+import {
+    useRef,
+    type RefObject,
+} from "react";
 
 import type { SiteContent } from "../content/types";
 import { useSmoothScrollProgress } from "../components/SmoothScroll.tsx";
@@ -11,17 +14,21 @@ import { useSmoothScrollProgress } from "../components/SmoothScroll.tsx";
 
 interface SwitzerlandProps {
     content: SiteContent;
+    scrollContainer?: RefObject<HTMLElement | null>;
 }
 
 
 export default function Switzerland({
                                         content,
+                                        scrollContainer,
                                     }: SwitzerlandProps) {
 
     const sectionRef = useRef<HTMLElement>(null);
 
     const scrollProgress = useSmoothScrollProgress({
         target: sectionRef,
+        container: scrollContainer,
+        offset: ["start start", "end end"],
     });
 
     const backgroundOpacity = useTransform(
@@ -100,7 +107,9 @@ export default function Switzerland({
                     />
                 </motion.div>
 
-                <span className="switzerland__index">{content.switzerland.section}</span>
+                <span className="switzerland__index">
+                    {content.switzerland.section}
+                </span>
 
                 <motion.div
                     className="switzerland__location"
@@ -110,8 +119,13 @@ export default function Switzerland({
                         willChange: "transform, opacity",
                     }}
                 >
-                    <h2>{content.switzerland.place}</h2>
-                         <span>{content.switzerland.country}</span>
+                    <h2>
+                        {content.switzerland.place}
+                    </h2>
+
+                    <span>
+                        {content.switzerland.country}
+                    </span>
                 </motion.div>
 
                 <div className="switzerland__statement-position">
@@ -123,8 +137,13 @@ export default function Switzerland({
                             willChange: "transform, opacity",
                         }}
                     >
-                        <span>{content.switzerland.statement.line1}</span>
-                        <span>{content.switzerland.statement.line2}</span>
+                        <span>
+                            {content.switzerland.statement.line1}
+                        </span>
+
+                        <span>
+                            {content.switzerland.statement.line2}
+                        </span>
                     </motion.div>
                 </div>
 

@@ -226,6 +226,15 @@ export interface SiteContent {
 
         projects: Record<ProjectId, ProjectContent>;
     };
+
+    storyGate: {
+        label: string;
+        title: string;
+        description: string;
+        read: string;
+        skip: string;
+    };
+
     tptpCaseStudy: TptpCaseStudyContent;
     llmCaseStudy: LlmCaseStudyContent;
 }

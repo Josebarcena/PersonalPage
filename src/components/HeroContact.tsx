@@ -1,3 +1,5 @@
+import { FileText } from "lucide-react";
+
 export default function HeroContact() {
     return (
         <div className="hero-contact">
@@ -63,12 +65,12 @@ export default function HeroContact() {
                 </div>
 
                 <a
-                    className="hero-contact__cv"
                     href="/cv/Jose_Barcena_CV.pdf"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noreferrer"
+                    className="hero-contact__cv"
                 >
-                    CV ↗
+                    <FileText size={15} strokeWidth={1.6} />
                 </a>
 
             </div>

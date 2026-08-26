@@ -343,21 +343,28 @@ before project__detail, remove the extra margin.
 }
 
 .project__links a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 14px;
+
     color: inherit;
-
-    font-size: 10px;
-    font-weight: 600;
-
-    letter-spacing: 0.12em;
-
     text-decoration: none;
 
-    border-bottom: 1px solid currentColor;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 
-    padding-bottom: 4px;
+    font-family: "Arial Narrow", "Roboto Condensed", sans-serif;
+}
 
-    transition:
-            opacity 180ms ease;
+.project__link-index {
+    min-width: 18px;
+
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    opacity: 0.45;
 }
 
 .project__links a:hover {

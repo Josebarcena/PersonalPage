@@ -4,6 +4,7 @@
 @import "./story.css";
 @import "./switzerland.css";
 @import "./menu.css";
+@import "./story-gate.css";
 @import "./projects.css";
 @import "./responsive.css";
 
@@ -80,14 +81,53 @@ a {
             transform 180ms ease;
 }
 
-.language-selector__button:hover {
-    opacity: 0.65;
+.language-switcher {
+    position: fixed;
+    top: 22px;
+    right: 24px;
+
+    z-index: 9000;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.language-selector__button:active {
-    transform: translateY(1px);
+.language-switcher__button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    color: inherit;
+
+    font: inherit;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+
+    opacity: 0.35;
+
+    cursor: pointer;
+
+    transition: opacity 180ms ease;
 }
 
-.language-selector__button--active {
+.language-switcher__button:hover {
+    opacity: 0.7;
+}
+
+.language-switcher__button--active {
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .language-switcher {
+        top: 18px;
+        right: 18px;
+        gap: 8px;
+    }
+
+    .language-switcher__button {
+        font-size: 8px;
+    }
 }

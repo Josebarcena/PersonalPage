@@ -6,12 +6,14 @@ import type { SiteContent } from "../content/types";
 interface MenuProps {
     open: boolean;
     onClose: () => void;
+    onOpenStory: () => void;
     content: SiteContent;
 }
 
 export default function Menu({
                                  open,
                                  onClose,
+                                 onOpenStory,
                                  content,
                              }: MenuProps) {
 
@@ -19,14 +21,16 @@ export default function Menu({
      * Prevent the page behind the menu from scrolling.
      */
     useEffect(() => {
-        if (open) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
+        if (!open) {
+            return;
         }
 
+        const previousOverflow = document.body.style.overflow;
+
+        document.body.style.overflow = "hidden";
+
         return () => {
-            document.body.style.overflow = "";
+            document.body.style.overflow = previousOverflow;
         };
     }, [open]);
 
@@ -34,10 +38,6 @@ export default function Menu({
     const navigateTo = (id: string) => {
         onClose();
 
-        /*
-         * Wait until the exit animation has started
-         * before moving through the document.
-         */
         window.setTimeout(() => {
             document
                 .getElementById(id)
@@ -49,11 +49,23 @@ export default function Menu({
     };
 
 
+    const openStory = () => {
+        onClose();
+
+        /*
+         * Let the menu start its exit animation
+         * before opening the story overlay.
+         */
+        window.setTimeout(() => {
+            onOpenStory();
+        }, 250);
+    };
+
+
     return (
         <AnimatePresence>
 
             {open && (
-
                 <motion.div
                     className="menu"
                     initial={{
@@ -71,14 +83,13 @@ export default function Menu({
                     }}
                 >
 
-                    {/* HEADER */}
-
                     <header className="menu__header">
 
                         <span>JOSE BARCENA</span>
 
                         <button
                             className="menu__close"
+                            type="button"
                             onClick={onClose}
                         >
                             {content.menu.close} ×
@@ -87,23 +98,27 @@ export default function Menu({
                     </header>
 
 
-                    {/* NAVIGATION */}
-
                     <nav className="menu__navigation">
 
-
-                        {/* STORY */}
+                        {/* OPTIONAL STORY */}
 
                         <button
                             className="menu__item"
-                            onClick={() => navigateTo("story")}
+                            type="button"
+                            onClick={openStory}
                         >
+                            <span className="menu__number">
+                                01
+                            </span>
 
-                            <span className="menu__number">01</span>
                             <span className="menu__item-content">
-                                <strong>{content.menu.story}</strong>
-                                <small>{content.menu.storyDescription}</small>
+                                <strong>
+                                    {content.menu.story}
+                                </strong>
 
+                                <small>
+                                    {content.menu.storyDescription}
+                                </small>
                             </span>
                         </button>
 
@@ -112,43 +127,60 @@ export default function Menu({
 
                         <button
                             className="menu__item"
+                            type="button"
                             onClick={() => navigateTo("work")}
                         >
-
-                            <span className="menu__number">02</span>
-                            <span className="menu__item-content">
-                                <strong>{content.menu.work}</strong>
-                                <small>{content.menu.workDescription}</small>
+                            <span className="menu__number">
+                                02
                             </span>
 
+                            <span className="menu__item-content">
+                                <strong>
+                                    {content.menu.work}
+                                </strong>
+
+                                <small>
+                                    {content.menu.workDescription}
+                                </small>
+                            </span>
                         </button>
 
                     </nav>
 
 
-                    {/* FOOTER */}
-
                     <footer className="menu__footer">
 
-                        <a href="/Jose-Barcena-CV.pdf" target="_blank" rel="noreferrer">
-                            CV ↗
+                        <a
+                            href="/Jose-Barcena-CV.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            CV
                         </a>
 
                         <div className="menu__socials">
 
-                            <a href="https://github.com/Josebarcena" target="_blank" rel="noreferrer">
-                                GITHUB ↗
+                            <a
+                                href="https://github.com/Josebarcena"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                GITHUB
                             </a>
 
-                            <a href="https://www.linkedin.com/in/jose-manuel-barcena-anido" target="_blank"
-                               rel="noreferrer">
-                                LINKEDIN ↗
+                            <a
+                                href="https://www.linkedin.com/in/jose-manuel-barcena-anido"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                LINKEDIN
                             </a>
+
                         </div>
+
                     </footer>
 
                 </motion.div>
-
             )}
 
         </AnimatePresence>

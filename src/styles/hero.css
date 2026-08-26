@@ -86,15 +86,6 @@
 
     object-fit: cover;
 
-    /*
-     * Change ONLY this value if we need
-     * to reposition you inside the photograph.
-     *
-     * 50% = centered
-     * 60% = move crop slightly
-     * 70% = move crop further
-     */
-
     object-position: 50% center;
 
     user-select: none;
@@ -210,7 +201,6 @@
 
     transform: translateX(-50%);
 }
-
 /* =========================================================
    HERO CONTACT
    ========================================================= */
@@ -285,12 +275,12 @@
    ========================================================= */
 
 .hero-contact__bottom {
-    margin-top: 18px;
+    margin-top: 16px;
 
     display: flex;
     align-items: center;
 
-    gap: 22px;
+    gap: 0;
 }
 
 
@@ -302,7 +292,7 @@
     display: flex;
     align-items: center;
 
-    gap: 13px;
+    gap: 8px;
 }
 
 .hero-contact__socials a {
@@ -314,6 +304,7 @@
     justify-content: center;
 
     color: inherit;
+    text-decoration: none;
 
     opacity: 0.4;
 
@@ -324,7 +315,6 @@
 
 .hero-contact__socials a:hover {
     opacity: 1;
-
     transform: translateY(-2px);
 }
 
@@ -341,27 +331,76 @@
    ========================================================= */
 
 .hero-contact__cv {
-    padding-bottom: 3px;
+    width: 17px;
+    height: 17px;
+
+    margin-left: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     color: inherit;
+    text-decoration: none;
 
-    font-size: 8px;
-    font-weight: 600;
+    opacity: 0.4;
 
-    line-height: 1;
+    transition:
+            opacity 180ms ease,
+            transform 180ms ease;
+}
+
+.hero-contact__cv:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.hero-contact__cv svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   HERO TOP LEFT
+   ========================================================= */
+
+.hero__top-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   INDEX BUTTON
+   ========================================================= */
+
+.hero__index-button {
+    padding: 0;
+    border: 0;
+
+    background: transparent;
+    color: inherit;
+
+    font: inherit;
+    font-size: 9px;
+    font-weight: 500;
 
     letter-spacing: 0.12em;
 
-    text-decoration: none;
+    cursor: pointer;
 
-    border-bottom: 1px solid currentColor;
-
-    opacity: 0.42;
+    opacity: 0.45;
 
     transition: opacity 180ms ease;
 }
 
-.hero-contact__cv:hover {
+.hero__index-button:hover {
     opacity: 1;
 }
 
@@ -380,4 +419,11 @@
         margin-top: 16px;
     }
 
+    .hero-contact__socials {
+        gap: 7px;
+    }
+
+    .hero-contact__cv {
+        margin-left: 7px;
+    }
 }

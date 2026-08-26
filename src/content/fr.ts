@@ -99,6 +99,15 @@ export const fr: SiteContent = {
         contactDescription: "Me contacter",
     },
 
+    storyGate: {
+        label: "CHAPITRE OPTIONNEL",
+        title: "AVANT LES PROJETS",
+        description:
+            "Une courte histoire sur les lieux et les expériences qui ont façonné le travail présenté ensuite.",
+        read: "CONTINUER",
+        skip: "VOIR LES PROJETS",
+    },
+
     work: {
         section: "03 / PROJETS",
 

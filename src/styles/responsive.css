@@ -32,6 +32,32 @@
                 35vw
         );
     }
+    .story-gate {
+        top: auto;
+        right: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: auto;
+        min-height: 58svh;
+
+        padding: 2rem 1.5rem;
+
+        align-items: flex-start;
+
+        box-shadow:
+                0 -20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    .story-gate__title {
+        font-size: clamp(2.8rem, 12vw, 4.2rem);
+    }
+
+    .story-gate__actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
 }
 
 
@@ -384,5 +410,32 @@
         width: auto;
 
         font-size: 16px;
+    }
+
+    .story-gate {
+        top: auto;
+        right: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: auto;
+        min-height: 58svh;
+
+        padding: 2rem 1.5rem;
+
+        align-items: flex-start;
+
+        box-shadow:
+                0 -20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    .story-gate__title {
+        font-size: clamp(2.8rem, 12vw, 4.2rem);
+    }
+
+    .story-gate__actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
     }
 }
