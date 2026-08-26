@@ -3,40 +3,27 @@
    ========================================================= */
 
 .llm-outcome {
-    position: relative;
-
-    min-height: 110vh;
+    min-height: 100vh;
 
     padding:
-            15vh
+            5vh
             var(--page-padding)
-            7vh;
+            5vh;
 
     display: flex;
     flex-direction: column;
-
-    background: var(--background);
 }
-
-
-/* =========================================================
-   TITLE
-   ========================================================= */
 
 .llm-outcome h2 {
-    width: min(1200px, 90vw);
+    width: min(1100px, 75vw);
 
-    margin:
-            13vh
-            0
-            0;
+    margin-top: 12vh;
 
-    font-size: clamp(65px, 8.5vw, 155px);
-    font-weight: 700;
-
-    line-height: 0.79;
-    letter-spacing: -0.075em;
+    font-size: clamp(80px, 7.5vw, 150px);
+    line-height: 0.78;
+    letter-spacing: -0.065em;
 }
+
 
 
 /* =========================================================
@@ -44,17 +31,31 @@
    ========================================================= */
 
 .llm-outcome__bottom {
-    margin-top: 13vh;
+    width: 100%;
+
+    margin-top: 12vh;
 
     display: grid;
-
     grid-template-columns:
-        minmax(220px, 0.65fr)
-        minmax(360px, 0.65fr);
+        minmax(180px, 0.8fr)
+        minmax(320px, 1fr);
 
-    justify-content: space-between;
+    column-gap: 12vw;
 
-    gap: 10vw;
+    align-items: start;
+}
+
+.llm-outcome__stack {
+    align-self: start;
+}
+
+.llm-outcome__copy {
+    width: min(100%, 500px);
+
+    justify-self: end;
+
+    font-size: 16px;
+    line-height: 1.55;
 }
 
 
@@ -105,11 +106,14 @@
    ========================================================= */
 
 .llm-outcome footer {
+    width: 100%;
+
     margin-top: auto;
-    padding-top: 12vh;
+    padding-top: 8vh;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .llm-outcome footer a {

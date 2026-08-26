@@ -26,11 +26,6 @@ export default function Hero({
         offset: ["start start", "end start"],
     });
 
-    /*
-     * LEFT CONTENT
-     *
-     * Starts disappearing after a little scrolling.
-     */
     const contentOpacity = useTransform(
         scrollYProgress,
         [0, 0.35],

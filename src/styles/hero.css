@@ -2,13 +2,6 @@
    HERO
    ========================================================= */
 
-/*
- * The Hero is taller than the viewport.
- *
- * This gives Motion some scroll distance while
- * .hero__sticky remains fixed on screen.
- */
-
 .hero {
     position: relative;
 

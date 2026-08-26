@@ -67,22 +67,26 @@
 /* =========================================================
    2.73X
    ========================================================= */
-
 .llm-comparison__result {
-    position: absolute;
+    position: relative;
 
-    top: 39%;
-    right: -1vw;
+    width: fit-content;
 
-    z-index: 0;
+    margin:
+            70px
+            0
+            50px
+            var(--page-padding);
 
-    font-size: clamp(150px, 26vw, 500px);
+    font-size: clamp(150px, 20vw, 300px);
     font-weight: 700;
 
-    line-height: 0.7;
+    line-height: 0.72;
     letter-spacing: -0.09em;
 
-    opacity: 0.055;
+    white-space: nowrap;
+
+    opacity: 1;
 
     pointer-events: none;
     user-select: none;

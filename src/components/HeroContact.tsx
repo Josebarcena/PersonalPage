@@ -64,11 +64,11 @@ export default function HeroContact() {
 
                 <a
                     className="hero-contact__cv"
-                    href="/cv/Jose-Barcena-CV.pdf"
+                    href="/cv/Jose_Barcena_CV.pdf"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                 >
-                    DOWNLOAD CV ↗
+                    CV ↗
                 </a>
 
             </div>
