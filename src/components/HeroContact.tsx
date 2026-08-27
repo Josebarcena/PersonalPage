@@ -1,22 +1,35 @@
-import { FileText } from "lucide-react";
+
 
 export default function HeroContact() {
     return (
         <div className="hero-contact">
 
-            <span className="hero-contact__label">
-                CONTACT
-            </span>
+            <div className="hero-contact__header">
+                <span className="hero-contact__label">
+                    CONTACT
+                </span>
 
+                            <a
+                                href="/cv/Jose_Barcena_CV.pdf"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="hero-contact__cv"
+                            >
+                                CV ↗
+                            </a>
+                        </div>
             <div className="hero-contact__details">
 
                 <a href="mailto:josebarcena98@gmail.com">
                     josebarcena98@gmail.com
                 </a>
 
+
+
                 <a href="tel:+41764373549">
                     +41 76 437 35 49
                 </a>
+
 
             </div>
 
@@ -64,14 +77,7 @@ export default function HeroContact() {
 
                 </div>
 
-                <a
-                    href="/cv/Jose_Barcena_CV.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hero-contact__cv"
-                >
-                    <FileText size={15} strokeWidth={1.6} />
-                </a>
+
 
             </div>
 

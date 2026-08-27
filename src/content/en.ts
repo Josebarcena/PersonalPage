@@ -109,9 +109,9 @@ export const en: SiteContent = {
     },
 
     work: {
-        section: "03 / SELECTED WORK",
+        section: "03 / SELECTED PROJECTS",
 
-        title: "SELECTED WORK.",
+        title: "SELECTED PROJECTS.",
 
         explore: "EXPLORE PROJECT",
         source: "SOURCE CODE",

@@ -1,5 +1,4 @@
 import type {
-    Language,
     SiteContent,
 } from "../content/types";
 
@@ -29,15 +28,11 @@ import "../styles/projects/llm/llm-case-study.css";
 
 interface Props {
     content: SiteContent;
-    language: Language;
-    setLanguage: (language: Language) => void;
 }
 
 
 export default function LlmInferenceProject({
                                                 content,
-                                                language,
-                                                setLanguage,
                                             }: Props) {
 
     const text = content.llmCaseStudy;
@@ -47,8 +42,6 @@ export default function LlmInferenceProject({
 
             <LlmHero
                 text={text}
-                language={language}
-                setLanguage={setLanguage}
             />
 
             <LlmQuestion text={text} />

@@ -1,7 +1,6 @@
 import type {
     LlmCaseStudyContent,
 } from "../../../content/types";
-import { Link } from "react-router-dom";
 
 interface Props {
     text: LlmCaseStudyContent;
@@ -50,12 +49,8 @@ export default function LlmOutcome({
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <span>02</span> {text.source}
+                    {text.source} <span>↗</span>
                 </a>
-
-                <Link to="/">
-                    <span>00</span> {text.back}
-                </Link>
             </footer>
 
         </section>

@@ -64,7 +64,8 @@ a {
 
     background: transparent;
 
-    color: inherit;
+    color: white;
+    mix-blend-mode: difference;
 
     font-family: inherit;
     font-size: inherit;
@@ -83,14 +84,18 @@ a {
 
 .language-switcher {
     position: fixed;
-    top: 22px;
-    right: 24px;
+
+    top: calc(var(--page-padding) + 30px);
+    right: var(--page-padding);
 
     z-index: 9000;
 
     display: flex;
     align-items: center;
     gap: 10px;
+
+    color: white;
+    mix-blend-mode: difference;
 }
 
 .language-switcher__button {
@@ -99,6 +104,7 @@ a {
     background: transparent;
 
     color: inherit;
+    mix-blend-mode: normal;
 
     font: inherit;
     font-size: 9px;
@@ -120,9 +126,18 @@ a {
     opacity: 1;
 }
 
+.story-overlay .language-switcher {
+    top: calc(var(--page-padding) + 30px);
+
+    left: var(--page-padding);
+    right: auto;
+
+    z-index: 10000;
+}
+
 @media (max-width: 768px) {
     .language-switcher {
-        top: 18px;
+        top: 33px;
         right: 18px;
         gap: 8px;
     }

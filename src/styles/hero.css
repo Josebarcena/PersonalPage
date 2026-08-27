@@ -6,7 +6,7 @@
     position: relative;
 
     width: 100%;
-    height: 180vh;
+    height: auto;
 
     background: var(--background);
 }
@@ -18,7 +18,7 @@
 
     width: 100%;
     height: 100vh;
-    min-height: 700px;
+    min-height: auto;
 
     overflow: hidden;
 
@@ -329,21 +329,42 @@
 /* =========================================================
    CV
    ========================================================= */
-
-.hero-contact__cv {
-    width: 17px;
-    height: 17px;
-
-    margin-left: 8px;
-
+.hero-contact__header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+.hero-contact__label {
+    margin-bottom: 0;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    line-height: 1;
+    letter-spacing: 0.14em;
+
+    opacity: 0.95;
+}
+
+.hero-contact__cv {
+    width: auto;
+    height: auto;
+    margin-left: 0;
+
+    display: inline-flex;
+    align-items: center;
 
     color: inherit;
     text-decoration: none;
 
-    opacity: 0.4;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+
+    opacity: 0.65;
 
     transition:
             opacity 180ms ease,
@@ -354,14 +375,6 @@
     opacity: 1;
     transform: translateY(-2px);
 }
-
-.hero-contact__cv svg {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-}
-
 
 /* =========================================================
    HERO TOP LEFT

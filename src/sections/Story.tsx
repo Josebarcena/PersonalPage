@@ -105,19 +105,13 @@ export default function Story({
         >
             <div className="story__sticky">
 
-                <motion.div
-                    className="story__background"
-                    style={{
+                <motion.div className="story__background" style={{
                         opacity: backgroundOpacity,
                         scale: backgroundScale,
                         willChange: "transform, opacity",
                     }}
                 >
-                    <img
-                        src="/images/coruna.jpg"
-                        alt=""
-                        aria-hidden="true"
-                    />
+                    <img src="/images/coruna.jpg" alt="" aria-hidden="true"/>
                 </motion.div>
 
                 <motion.span
@@ -139,10 +133,7 @@ export default function Story({
                     }}
                 >
                     <h2>{content.story.place}</h2>
-
-                    <span>
-                        {content.story.country}
-                    </span>
+                        <span>{content.story.country}</span>
 
                     <div className="story__coordinates">
                         43.3623° N
@@ -172,21 +163,10 @@ export default function Story({
                             willChange: "transform, opacity",
                         }}
                     >
-                        <span>
-                            {content.story.curiosityStatement.line1}
-                        </span>
-
-                        <span>
-                            {content.story.curiosityStatement.line2}
-                        </span>
-
-                        <span>
-                            {content.story.curiosityStatement.line3}
-                        </span>
-
-                        <span>
-                            {content.story.curiosityStatement.line4}
-                        </span>
+                        <span>{content.story.curiosityStatement.line1}</span>
+                        <span>{content.story.curiosityStatement.line2}</span>
+                        <span>{content.story.curiosityStatement.line3}</span>
+                        <span>{content.story.curiosityStatement.line4}</span>
                     </motion.div>
                 </div>
 
@@ -210,23 +190,17 @@ export default function Story({
                         <aside className="story__biography-notes">
                             <div className="story__note">
                                 <strong>ASOC</strong>
-                                <span>
-                                    {content.story.biography.asoc}
-                                </span>
+                                <span>{content.story.biography.asoc}</span>
                             </div>
 
                             <div className="story__note">
                                 <strong>MENTOR</strong>
-                                <span>
-                                    {content.story.biography.mentor}
-                                </span>
+                                <span>{content.story.biography.mentor}</span>
                             </div>
 
                             <div className="story__note">
                                 <strong>STUDENT COUNCIL</strong>
-                                <span>
-                                    {content.story.biography.council}
-                                </span>
+                                <span>{content.story.biography.council}</span>
                             </div>
                         </aside>
 

@@ -1,4 +1,4 @@
-import type { Language, SiteContent } from "../content/types";
+import type {SiteContent } from "../content/types";
 
 import TptpHero from "../sections/case-study/Tptp/TptpHero.tsx";
 import TptpProblem from "../sections/case-study/Tptp/TptpProblem.tsx";
@@ -11,14 +11,10 @@ import "../styles/case-study.css";
 
 interface TptpProjectProps {
     content: SiteContent;
-    language: Language;
-    setLanguage: (language: Language) => void;
 }
 
 export default function TptpProject({
                                         content,
-                                        language,
-                                        setLanguage,
                                     }: TptpProjectProps) {
 
     const text = content.tptpCaseStudy;
@@ -28,8 +24,6 @@ export default function TptpProject({
 
             <TptpHero
                 text={text}
-                language={language}
-                setLanguage={setLanguage}
             />
 
             <TptpProblem text={text} />

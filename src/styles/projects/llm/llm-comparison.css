@@ -5,13 +5,12 @@
 .llm-comparison {
     position: relative;
 
-    min-height: 120vh;
+    min-height: auto;
 
     padding:
-            15vh
-            var(--page-padding);
-
-    overflow: hidden;
+            10vh
+            var(--page-padding)
+            8vh;
 
     background: var(--foreground);
     color: var(--background);
@@ -23,44 +22,40 @@
    ========================================================= */
 
 .llm-comparison__header {
-    position: relative;
-    z-index: 2;
-
-    margin-top: 10vh;
-
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(300px, 0.45fr);
+        minmax(0, 1.1fr)
+        minmax(320px, 0.45fr);
 
-    gap: 8vw;
+    gap: 6vw;
+
+    align-items: end;
 }
 
 .llm-comparison__header h2 {
-    max-width: 900px;
+    max-width: 760px;
 
     margin: 0;
 
-    font-size: clamp(62px, 7.5vw, 135px);
+    font-size: clamp(52px, 5.4vw, 96px);
     font-weight: 700;
 
-    line-height: 0.8;
-    letter-spacing: -0.07em;
+    line-height: 0.86;
+    letter-spacing: -0.06em;
 }
 
 .llm-comparison__header p {
-    width: min(100%, 410px);
+    width: min(100%, 430px);
 
     margin: 0;
 
-    align-self: end;
+    justify-self: end;
 
-    font-size: clamp(14px, 1vw, 17px);
-
+    font-size: clamp(16px, 1.1vw, 19px);
     line-height: 1.55;
 
-    opacity: 0.58;
+    opacity: 0.62;
 }
 
 
@@ -73,16 +68,16 @@
     width: fit-content;
 
     margin:
-            70px
+            48px
             0
-            50px
+            32px
             var(--page-padding);
 
-    font-size: clamp(150px, 20vw, 300px);
+    font-size: clamp(80px, 10vw, 150px);
     font-weight: 700;
 
-    line-height: 0.72;
-    letter-spacing: -0.09em;
+    line-height: 0.78;
+    letter-spacing: -0.075em;
 
     white-space: nowrap;
 
@@ -101,7 +96,8 @@
     position: relative;
     z-index: 2;
 
-    margin-top: 16vh;
+    /* antes: 16vh */
+    margin-top: clamp(50px, 6vh, 90px);
 
     width: 100%;
 }
@@ -121,7 +117,7 @@
 }
 
 .backend-comparison__header {
-    padding-bottom: 18px;
+    padding-bottom: 16px;
 
     border-bottom:
             1px solid
@@ -129,7 +125,7 @@
 }
 
 .backend-comparison__header strong {
-    font-size: 10px;
+    font-size: clamp(10px, 0.7vw, 12px);
     font-weight: 600;
 
     letter-spacing: 0.13em;
@@ -138,7 +134,8 @@
 }
 
 .backend-comparison__row {
-    min-height: 105px;
+    /* antes: 105px */
+    min-height: 82px;
 
     border-bottom:
             1px solid
@@ -146,7 +143,7 @@
 }
 
 .backend-comparison__row span {
-    font-size: 9px;
+    font-size: clamp(9px, 0.65vw, 11px);
     font-weight: 600;
 
     letter-spacing: 0.12em;
@@ -155,7 +152,7 @@
 }
 
 .backend-comparison__row strong {
-    font-size: clamp(20px, 2vw, 34px);
+    font-size: clamp(18px, 1.5vw, 26px);
     font-weight: 500;
 
     letter-spacing: -0.035em;

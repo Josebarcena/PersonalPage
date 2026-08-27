@@ -240,6 +240,8 @@ export default function Home({
 
             <Projects
                 content={content}
+                language={language}
+                setLanguage={setLanguage}
             />
 
 

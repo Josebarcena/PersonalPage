@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import type {
     TptpCaseStudyContent,
 } from "../../../content/types.ts";
@@ -57,13 +55,8 @@ export default function TptpOutcome({
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <span className="tptp__link-index">02</span> {text.source}
+                    {text.source} <span className="tptp__link-index">↗</span>
                 </a>
-
-                <Link to="/">
-                    <span className="tptp__link-index">00</span> {text.back}
-                </Link>
-
             </footer>
 
         </section>

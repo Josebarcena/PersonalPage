@@ -46,8 +46,6 @@ function App() {
                 element={
                     <TptpProject
                         content={text}
-                        language={language}
-                        setLanguage={setLanguage}
                     />
                 }
             />
@@ -57,8 +55,6 @@ function App() {
                 element={
                     <LlmInferenceProject
                         content={text}
-                        language={language}
-                        setLanguage={setLanguage}
                     />
                 }
             />

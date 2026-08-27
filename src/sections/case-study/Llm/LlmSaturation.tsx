@@ -75,11 +75,15 @@ export default function LlmSaturation({
 
                             <motion.div
                                 className="saturation-chart__bar"
+                                style={{
+                                    height: point.height,
+                                    transformOrigin: "bottom",
+                                }}
                                 initial={{
-                                    height: 0,
+                                    scaleY: 0,
                                 }}
                                 whileInView={{
-                                    height: point.height,
+                                    scaleY: 1,
                                 }}
                                 viewport={{
                                     once: true,

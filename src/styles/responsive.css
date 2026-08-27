@@ -65,7 +65,7 @@
    MOBILE
    ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
 
     .hero__title {
         font-size: clamp(38px, 9.8vw, 45px);
@@ -92,9 +92,17 @@
     }
 
     .story__statement {
+        position: absolute;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
         box-sizing: border-box;
 
         width: 100%;
+        max-width: none;
         height: 100%;
 
         padding:
@@ -106,20 +114,23 @@
         align-items: center;
         justify-content: flex-start;
 
+        transform: none;
+
         overflow: hidden;
     }
 
-    .story__statement-content {
-        box-sizing: border-box;
+    .story__statement-content span {
+        display: block;
 
         width: 100%;
         max-width: 100%;
 
-        font-size: clamp(30px, 8.8vw, 38px);
-        line-height: 0.94;
-        letter-spacing: -0.045em;
+        white-space: normal;
 
-        text-align: left;
+        overflow-wrap: normal;
+        word-break: normal;
+
+        text-wrap: balance;
     }
 
     .story__statement-content span {
@@ -307,7 +318,7 @@
     }
 }
 
-@media (min-width: 481) and (max-width: 700px) {
+@media (min-width: 481px) and (max-width: 700px) {
 
     :root {
         --page-padding: 20px;
