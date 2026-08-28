@@ -92,7 +92,7 @@ export const en: SiteContent = {
         story: "STORY",
         storyDescription: "A Coruña → Valais",
 
-        work: "SELECTED WORK",
+        work: "SELECTED PROJECTS",
         workDescription: "Engineering & projects",
 
         contact: "CONTACT",
