@@ -33,30 +33,70 @@
         );
     }
     .story-gate {
+        position: fixed;
+
         top: auto;
-        right: 0;
-        bottom: 0;
+        right: 18px;
+        bottom: 18px;
+        left: auto;
 
-        width: 100%;
+        width: min(320px, calc(100vw - 36px));
         height: auto;
-        min-height: 58svh;
+        min-height: 0;
 
-        padding: 2rem 1.5rem;
+        padding: 20px 20px 18px;
 
-        align-items: flex-start;
+        display: block;
+
+        border: 1px solid rgba(20, 20, 20, 0.08);
+
+        background: rgba(242, 240, 235, 0.88);
+
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
 
         box-shadow:
-                0 -20px 60px rgba(0, 0, 0, 0.08);
+                0 14px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .story-gate__label {
+        font-size: 8px;
+        letter-spacing: 0.12em;
+
+        opacity: 0.5;
     }
 
     .story-gate__title {
-        font-size: clamp(2.8rem, 12vw, 4.2rem);
+        margin-top: 12px;
+
+        max-width: 250px;
+
+        font-size: clamp(30px, 7vw, 46px);
+        line-height: 0.9;
+        letter-spacing: -0.055em;
+    }
+    .story-gate__description {
+        max-width: 240px;
+
+        margin-top: 16px;
+
+        font-size: 11px;
+        line-height: 1.45;
+
+        opacity: 0.62;
     }
 
     .story-gate__actions {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
+        margin-top: 20px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        gap: 20px;
+    }
+    .story-gate__actions button {
+        font-size: 9px;
     }
 }
 
@@ -65,7 +105,7 @@
    MOBILE
    ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
 
     .hero__title {
         font-size: clamp(38px, 9.8vw, 45px);
@@ -422,31 +462,27 @@
 
         font-size: 16px;
     }
+}
 
+@media (max-width: 480px) {
     .story-gate {
-        top: auto;
-        right: 0;
-        bottom: 0;
+        right: 12px;
+        bottom: 12px;
 
-        width: 100%;
-        height: auto;
-        min-height: 58svh;
+        width: min(280px, calc(100vw - 24px));
 
-        padding: 2rem 1.5rem;
-
-        align-items: flex-start;
-
-        box-shadow:
-                0 -20px 60px rgba(0, 0, 0, 0.08);
+        padding: 18px;
     }
 
     .story-gate__title {
-        font-size: clamp(2.8rem, 12vw, 4.2rem);
+        font-size: clamp(28px, 9vw, 38px);
+    }
+
+    .story-gate__description {
+        font-size: 10px;
     }
 
     .story-gate__actions {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
+        gap: 16px;
     }
 }

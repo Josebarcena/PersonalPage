@@ -44,7 +44,7 @@
 
     margin-bottom: 12px;
 
-    font-size: 8px;
+    font-size: clamp(8px, 0.8vw, 10px);
     letter-spacing: 0.14em;
     text-transform: uppercase;
 
@@ -67,7 +67,7 @@
 
     margin-top: 14px;
 
-    font-size: 11px;
+    font-size: clamp(11px, 0.8vw, 16px);
     line-height: 1.5;
 
     opacity: 0.55;
@@ -87,7 +87,7 @@
     background: none;
 
     font: inherit;
-    font-size: 10px;
+    font-size: clamp(10px, 0.8vw, 14px);
     font-weight: 500;
     letter-spacing: 0.1em;
 
@@ -139,7 +139,7 @@
     mix-blend-mode: difference;
 
     font: inherit;
-    font-size: 12px;
+    font-size: clamp(12px, 0.8vw, 18px);
     font-weight: 500;
     letter-spacing: 0.12em;
 
