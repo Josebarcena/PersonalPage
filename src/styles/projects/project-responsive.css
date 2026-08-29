@@ -610,6 +610,8 @@
 @media (max-width: 700px) {
     .case-hero {
         display: block;
+        aspect-ratio: auto;
+        min-height: 435px;
     }
 
     .case-hero__header {
@@ -622,14 +624,43 @@
 
     .case-hero__visual {
         width: 96%;
-        max-width: none;
+        margin-left: 2%;
+        margin-right: 2%;
 
-        min-height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        margin:
-                48px
-                2%
-                0;
+        box-sizing: border-box;
+    }
+
+    .case-hero__visual .tptp-visual {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 435px;
+        padding: 32px 0 55px;
+
+        padding-left: 0;
+        padding-right: 0;
+
+        box-sizing: border-box;
+    }
+
+    .case-hero__visual .tptp-visual__pipeline {
+        width: 68%;
+        max-width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-inline: auto;
+        
+        flex: 0 0 auto;
     }
 
     .case-hero__description {
@@ -638,23 +669,5 @@
 
     .case-hero__footer {
         margin-top: 60px;
-    }
-
-    .case-hero__visual .tptp-visual {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .case-hero__visual .tptp-visual__pipeline {
-        width: 68%;
-        max-width: 100%;
-
-        margin-inline: auto;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
