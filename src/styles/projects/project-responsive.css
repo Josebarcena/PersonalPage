@@ -639,4 +639,22 @@
     .case-hero__footer {
         margin-top: 60px;
     }
+
+    .case-hero__visual .tptp-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .case-hero__visual .tptp-visual__pipeline {
+        width: 68%;
+        max-width: 100%;
+
+        margin-inline: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
