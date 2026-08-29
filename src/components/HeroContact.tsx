@@ -15,7 +15,7 @@ export default function HeroContact() {
                                 rel="noreferrer"
                                 className="hero-contact__cv"
                             >
-                                CV ↗
+                                CV {"↗\uFE0E"}
                             </a>
                         </div>
             <div className="hero-contact__details">

@@ -55,7 +55,7 @@ export default function TptpOutcome({
                     target="_blank"
                     rel="noreferrer"
                 >
-                    {text.source} <span className="tptp__link-index">↗</span>
+                    {text.source} <span className="tptp__link-index">{"↗\uFE0E"}</span>
                 </a>
             </footer>
 

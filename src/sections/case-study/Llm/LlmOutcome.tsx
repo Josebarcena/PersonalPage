@@ -49,7 +49,7 @@ export default function LlmOutcome({
                     target="_blank"
                     rel="noreferrer"
                 >
-                    {text.source} <span>↗</span>
+                    {text.source} <span>{"↗\uFE0E"}</span>
                 </a>
             </footer>
 

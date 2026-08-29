@@ -212,7 +212,7 @@ export default function Projects({
                                             {content.work.explore}
 
                                             <span className="project__link-index">
-                                                ↗
+                                                {"↗\uFE0E"}
                                             </span>
                                         </button>
                                     )}
@@ -227,7 +227,7 @@ export default function Projects({
                                             {content.work.source}
 
                                             <span className="project__link-index">
-                                                ↗
+                                                {"↗\uFE0E"}
                                             </span>
                                         </a>
                                     )}

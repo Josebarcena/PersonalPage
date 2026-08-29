@@ -135,14 +135,13 @@ a {
     z-index: 10000;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .language-switcher {
-        top: 33px;
-        right: 18px;
-        gap: 8px;
+        top: 61px;
     }
-
-    .language-switcher__button {
-        font-size: clamp(9px, 0.8vw, 12px);
+    .menu__footer {
+        padding-bottom: calc(
+                16px + env(safe-area-inset-bottom)
+        );
     }
 }

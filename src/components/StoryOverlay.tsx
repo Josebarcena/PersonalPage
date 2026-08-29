@@ -6,6 +6,7 @@ import {
     type ReactNode,
     type RefObject,
     type WheelEvent,
+    type TouchEvent,
 } from "react";
 
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -22,7 +23,6 @@ interface StoryOverlayProps {
     setLanguage?: (language: Language) => void;
 }
 
-
 export default function StoryOverlay({
                                          children,
                                          onClose,
@@ -31,11 +31,15 @@ export default function StoryOverlay({
                                          setLanguage,
                                      }: StoryOverlayProps) {
 
-    const endScrollCount = useRef(0);
-    const wheelLocked = useRef(false);
+    const gestureRef = useRef({
+        wheelLocked: false,
+        touchStartY: 0,
+        touchStartedAtBottom: false,
+    });
 
-
-    const handleWheel = (event: WheelEvent<HTMLDivElement>) => {
+    const handleWheel = (
+        event: WheelEvent<HTMLDivElement>
+    ) => {
         const element = scrollRef.current;
 
         if (!element) return;
@@ -44,37 +48,61 @@ export default function StoryOverlay({
             element.scrollTop + element.clientHeight >=
             element.scrollHeight - 2;
 
-        // Si vuelve hacia arriba, reiniciamos el contador
-        if (event.deltaY < 0) {
-            endScrollCount.current = 0;
-            return;
-        }
+        if (event.deltaY < 0) return;
 
-        // Todavía no hemos llegado al final
         if (!isAtBottom || event.deltaY <= 0) {
             return;
         }
 
-        // Evita que un único gesto del trackpad
-        // genere muchos counts seguidos
-        if (wheelLocked.current) {
+        if (gestureRef.current.wheelLocked) {
             return;
         }
 
-        wheelLocked.current = true;
+        gestureRef.current.wheelLocked = true;
 
         window.setTimeout(() => {
-            wheelLocked.current = false;
+            gestureRef.current.wheelLocked = false;
         }, 400);
 
-        endScrollCount.current += 1;
-
-        if (endScrollCount.current >= 1) {
-            endScrollCount.current = 0;
-            onClose();
-        }
+        onClose();
     };
 
+    const handleTouchStart = (
+        event: TouchEvent<HTMLDivElement>
+    ) => {
+        const element = scrollRef.current;
+
+        if (!element) return;
+
+        gestureRef.current.touchStartY =
+            event.touches[0].clientY;
+
+        gestureRef.current.touchStartedAtBottom =
+            element.scrollTop + element.clientHeight >=
+            element.scrollHeight - 4;
+    };
+
+    const handleTouchEnd = (
+        event: TouchEvent<HTMLDivElement>
+    ) => {
+        const gesture = gestureRef.current;
+
+        if (!gesture.touchStartedAtBottom) {
+            return;
+        }
+
+        const touchEndY =
+            event.changedTouches[0].clientY;
+
+        const swipeDistance =
+            gesture.touchStartY - touchEndY;
+
+        if (swipeDistance > 50) {
+            onClose();
+        }
+
+        gesture.touchStartedAtBottom = false;
+    };
 
     return createPortal(
         <motion.div
@@ -105,6 +133,8 @@ export default function StoryOverlay({
                 ref={scrollRef}
                 className="story-overlay__scroll"
                 onWheel={handleWheel}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
             >
                 {children}
             </div>
