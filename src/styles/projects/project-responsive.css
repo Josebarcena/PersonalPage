@@ -606,3 +606,37 @@
         letter-spacing: -0.06em;
     }
 }
+
+@media (max-width: 700px) {
+    .case-hero {
+        display: block;
+    }
+
+    .case-hero__header {
+        margin-bottom: 12vh;
+    }
+
+    .case-hero__intro {
+        width: 100%;
+    }
+
+    .case-hero__visual {
+        width: 96%;
+        max-width: none;
+
+        min-height: 420px;
+
+        margin:
+                48px
+                2%
+                0;
+    }
+
+    .case-hero__description {
+        margin-top: 40px;
+    }
+
+    .case-hero__footer {
+        margin-top: 60px;
+    }
+}
