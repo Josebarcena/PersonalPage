@@ -11,6 +11,7 @@ import {
 import type { SiteContent } from "../content/types";
 import { useSmoothScrollProgress } from "../components/SmoothScroll.tsx";
 
+import "../styles/story.css";
 
 interface StoryProps {
     content: SiteContent;

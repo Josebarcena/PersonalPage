@@ -1,6 +1,7 @@
 import TptpVisual from "./projects/TptpVisual.tsx";
 import LlmInferenceVisual from "./projects/LlmInferenceVisual";
 import SemanticCodeVisual from "./projects/SemanticCodeVisual";
+import "../styles/projects.css"
 
 import type {
     ProjectVisual as ProjectVisualType,

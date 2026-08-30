@@ -465,3 +465,68 @@
         justify-self: end;
     }
 }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+    .hero__portrait {
+        width: 70%;
+    }
+
+    .hero__content {
+        width: 48vw;
+    }
+
+    .hero__title {
+        font-size: clamp(38px, 9.8vw, 45px);
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+    }
+
+    .hero__top-right {
+        gap: 20px;
+    }
+
+    .hero__location-bottom {
+        justify-self: start;
+    }
+
+    .hero__year {
+        justify-self: end;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 700px) {
+    .hero {
+        height: 160vh;
+    }
+
+    .hero__sticky {
+        min-height: 620px;
+    }
+
+    .hero__portrait {
+        width: 75%;
+    }
+
+    .hero__header {
+        align-items: flex-start;
+    }
+
+    .hero__content {
+        top: 42%;
+        width: 65vw;
+    }
+
+    .hero__intro {
+        margin-top: 28px;
+        font-size: 12px;
+    }
+
+    .hero__footer > span:first-child,
+    .hero__footer > span:last-child {
+        display: none;
+    }
+}

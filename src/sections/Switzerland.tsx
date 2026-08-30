@@ -11,6 +11,7 @@ import {
 import type { SiteContent } from "../content/types";
 import { useSmoothScrollProgress } from "../components/SmoothScroll.tsx";
 
+import "../styles/switzerland.css"
 
 interface SwitzerlandProps {
     content: SiteContent;

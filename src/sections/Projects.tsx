@@ -21,6 +21,8 @@ import ProjectVisual from "./ProjectVisual";
 import LlmInferenceProject from "../pages/LlmInferenceProject";
 import TptpProject from "../pages/TptpProject";
 
+import "../styles/projects.css"
+import "../styles/projects/project-responsive.css"
 
 interface ProjectsProps {
     content: SiteContent;

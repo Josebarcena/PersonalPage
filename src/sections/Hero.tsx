@@ -4,10 +4,11 @@ import {
 } from "motion/react";
 
 import { useRef } from "react";
-
 import type { SiteContent } from "../content/types";
 import HeroContact from "../components/HeroContact.tsx";
 import { useSmoothScrollProgress } from "../components/SmoothScroll";
+
+import "../styles/hero.css";
 
 
 interface HeroProps {

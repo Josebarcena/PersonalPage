@@ -3,6 +3,8 @@ import { useEffect } from "react";
 
 import type { SiteContent } from "../content/types";
 
+import "../styles/menu.css"
+
 interface MenuProps {
     open: boolean;
     onClose: () => void;
