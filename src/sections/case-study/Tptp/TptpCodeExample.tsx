@@ -1,9 +1,16 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
-import type {TptpCaseStudyContent,} from "../../../content/types.ts";
-import "../../../styles/projects/Tptp/tptp-code-example.css"
+import type {
+    TptpCaseStudyContent,
+} from "../../../content/types";
 
-interface Props {text: TptpCaseStudyContent;}
+import "../../../styles/projects/Tptp/tptp-code-example.css";
+
+
+interface Props {
+    text: TptpCaseStudyContent;
+}
+
 
 const tptpCode = `fof(
     socrates_is_mortal,
@@ -17,6 +24,7 @@ fof(
     ![X] :
         (human(X) => mortal(X))
 ).`;
+
 
 const pvsCode = `socrates: THEORY
 
@@ -34,6 +42,7 @@ socrates_is_mortal: THEOREM
 
 END socrates`;
 
+
 export default function TptpCodeExample({
                                             text,
                                         }: Props) {
@@ -44,6 +53,7 @@ export default function TptpCodeExample({
             <div className="case-section__index">
                 {text.codeExample.section}
             </div>
+
 
             <header className="code-comparison__header">
 
@@ -57,48 +67,81 @@ export default function TptpCodeExample({
 
             </header>
 
+
             <div className="code-comparison__grid">
 
-                <motion.article
+                <m.article
                     className="code-panel"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
+                    initial={{
+                        opacity: 0,
+                        y: 40,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    viewport={{
+                        once: true,
+                        amount: 0.3,
+                    }}
                 >
-
                     <header className="code-panel__header">
-                        <span>{text.codeExample.input}</span>
-                        <span>TPTP</span>
+                        <span>
+                            {text.codeExample.input}
+                        </span>
+
+                        <span>
+                            TPTP
+                        </span>
                     </header>
 
                     <pre>
-                        <code>{tptpCode}</code>
+                        <code>
+                            {tptpCode}
+                        </code>
                     </pre>
+                </m.article>
 
-                </motion.article>
 
                 <div className="code-comparison__arrow">
                     →
                 </div>
 
-                <motion.article
-                    className="code-panel"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ delay: 0.15 }}
-                >
 
+                <m.article
+                    className="code-panel"
+                    initial={{
+                        opacity: 0,
+                        y: 40,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    viewport={{
+                        once: true,
+                        amount: 0.3,
+                    }}
+                    transition={{
+                        delay: 0.15,
+                    }}
+                >
                     <header className="code-panel__header">
-                        <span>{text.codeExample.output}</span>
-                        <span>PVS</span>
+                        <span>
+                            {text.codeExample.output}
+                        </span>
+
+                        <span>
+                            PVS
+                        </span>
                     </header>
 
                     <pre>
-                        <code>{pvsCode}</code>
+                        <code>
+                            {pvsCode}
+                        </code>
                     </pre>
-
-                </motion.article>
+                </m.article>
 
             </div>
 

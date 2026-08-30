@@ -1,5 +1,7 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
+
 import "../../styles/projects/semantic/semantic-code-visual.css";
+
 
 const results = [
     {
@@ -19,6 +21,7 @@ const results = [
     },
 ];
 
+
 const pipeline = [
     "PARSE",
     "CHUNK",
@@ -26,6 +29,7 @@ const pipeline = [
     "INDEX",
     "RETRIEVE",
 ];
+
 
 export default function SemanticCodeVisual() {
 
@@ -59,7 +63,7 @@ export default function SemanticCodeVisual() {
                     NATURAL LANGUAGE QUERY
                 </span>
 
-                <motion.p
+                <m.p
                     initial={{
                         opacity: 0,
                         y: 12,
@@ -76,7 +80,7 @@ export default function SemanticCodeVisual() {
                     }}
                 >
                     Where is authentication implemented?
-                </motion.p>
+                </m.p>
 
             </div>
 
@@ -89,7 +93,7 @@ export default function SemanticCodeVisual() {
 
                 {pipeline.map((step, index) => (
 
-                    <motion.div
+                    <m.div
                         key={step}
                         className="semantic-visual__pipeline-step"
                         initial={{
@@ -107,15 +111,14 @@ export default function SemanticCodeVisual() {
                         }}
                     >
                         <span>
-                            {String(index + 1)
-                                .padStart(2, "0")}
+                            {String(index + 1).padStart(2, "0")}
                         </span>
 
                         <strong>
                             {step}
                         </strong>
 
-                    </motion.div>
+                    </m.div>
 
                 ))}
 
@@ -129,14 +132,19 @@ export default function SemanticCodeVisual() {
             <div className="semantic-visual__results">
 
                 <div className="semantic-visual__results-header">
-                    <span>RETRIEVED CODE</span>
-                    <span>RANK</span>
+                    <span>
+                        RETRIEVED CODE
+                    </span>
+
+                    <span>
+                        RANK
+                    </span>
                 </div>
 
 
                 {results.map((result, index) => (
 
-                    <motion.div
+                    <m.div
                         key={result.path}
                         className="semantic-result"
                         initial={{
@@ -153,12 +161,9 @@ export default function SemanticCodeVisual() {
                         }}
                         transition={{
                             duration: 0.5,
-                            delay:
-                                0.55 +
-                                index * 0.1,
+                            delay: 0.55 + index * 0.1,
                         }}
                     >
-
                         <div className="semantic-result__content">
 
                             <span>
@@ -175,7 +180,7 @@ export default function SemanticCodeVisual() {
                             {result.rank}
                         </span>
 
-                    </motion.div>
+                    </m.div>
 
                 ))}
 
@@ -188,10 +193,21 @@ export default function SemanticCodeVisual() {
 
             <div className="semantic-visual__languages">
 
-                <span>PYTHON / AST</span>
-                <span>JS · TS / TREE-SITTER</span>
-                <span>JAVA / TREE-SITTER</span>
-                <span>C · C++ / TREE-SITTER</span>
+                <span>
+                    PYTHON / AST
+                </span>
+
+                <span>
+                    JS · TS / TREE-SITTER
+                </span>
+
+                <span>
+                    JAVA / TREE-SITTER
+                </span>
+
+                <span>
+                    C · C++ / TREE-SITTER
+                </span>
 
             </div>
 

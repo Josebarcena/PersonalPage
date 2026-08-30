@@ -1,11 +1,20 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
-import type {TptpCaseStudyContent,} from "../../../content/types.ts";
-import "../../../styles/projects/Tptp/tptp-problem.css"
+import type {
+    TptpCaseStudyContent,
+} from "../../../content/types";
 
-interface Props {text: TptpCaseStudyContent;}
+import "../../../styles/projects/Tptp/tptp-problem.css";
 
-export default function TptpProblem({ text }: Props) {
+
+interface Props {
+    text: TptpCaseStudyContent;
+}
+
+
+export default function TptpProblem({
+                                        text,
+                                    }: Props) {
 
     return (
         <section className="case-problem">
@@ -14,7 +23,8 @@ export default function TptpProblem({ text }: Props) {
                 {text.problem.section}
             </div>
 
-            <motion.h2
+
+            <m.h2
                 className="case-problem__title"
                 initial={{
                     opacity: 0,
@@ -34,13 +44,15 @@ export default function TptpProblem({ text }: Props) {
                 }}
             >
                 {text.problem.title}
-            </motion.h2>
+            </m.h2>
+
 
             <div className="case-problem__bottom">
 
                 <div className="case-problem__statement">
                     {text.problem.statement}
                 </div>
+
 
                 <div className="case-problem__copy">
 

@@ -1,5 +1,5 @@
 import {
-    motion,
+    m,
     useTransform,
 } from "motion/react";
 
@@ -9,9 +9,11 @@ import {
 } from "react";
 
 import type { SiteContent } from "../content/types";
-import { useSmoothScrollProgress } from "../components/SmoothScroll.tsx";
 
-import "../styles/switzerland.css"
+import { useSmoothScrollProgress } from "../components/SmoothScroll";
+
+import "../styles/switzerland.css";
+
 
 interface SwitzerlandProps {
     content: SiteContent;
@@ -32,6 +34,7 @@ export default function Switzerland({
         offset: ["start start", "end end"],
     });
 
+
     const backgroundOpacity = useTransform(
         scrollProgress,
         [0, 0.06, 0.90, 1],
@@ -43,6 +46,7 @@ export default function Switzerland({
         [0, 1],
         [1.08, 1]
     );
+
 
     const locationOpacity = useTransform(
         scrollProgress,
@@ -56,6 +60,7 @@ export default function Switzerland({
         [80, -80]
     );
 
+
     const statementOpacity = useTransform(
         scrollProgress,
         [0.28, 0.36, 0.48, 0.56],
@@ -67,6 +72,7 @@ export default function Switzerland({
         [0.28, 0.56],
         [70, -70]
     );
+
 
     const textOpacity = useTransform(
         scrollProgress,
@@ -80,11 +86,13 @@ export default function Switzerland({
         [60, -60]
     );
 
+
     const closingOpacity = useTransform(
         scrollProgress,
         [0.78, 0.84, 0.96, 1],
         [0, 1, 1, 1]
     );
+
 
     return (
         <section
@@ -93,7 +101,7 @@ export default function Switzerland({
         >
             <div className="switzerland__sticky">
 
-                <motion.div
+                <m.div
                     className="switzerland__background"
                     style={{
                         opacity: backgroundOpacity,
@@ -106,13 +114,15 @@ export default function Switzerland({
                         alt=""
                         aria-hidden="true"
                     />
-                </motion.div>
+                </m.div>
+
 
                 <span className="switzerland__index">
                     {content.switzerland.section}
                 </span>
 
-                <motion.div
+
+                <m.div
                     className="switzerland__location"
                     style={{
                         opacity: locationOpacity,
@@ -127,10 +137,12 @@ export default function Switzerland({
                     <span>
                         {content.switzerland.country}
                     </span>
-                </motion.div>
+                </m.div>
+
 
                 <div className="switzerland__statement-position">
-                    <motion.div
+
+                    <m.div
                         className="switzerland__statement"
                         style={{
                             opacity: statementOpacity,
@@ -145,11 +157,14 @@ export default function Switzerland({
                         <span>
                             {content.switzerland.statement.line2}
                         </span>
-                    </motion.div>
+                    </m.div>
+
                 </div>
 
+
                 <div className="switzerland__text-position">
-                    <motion.div
+
+                    <m.div
                         className="switzerland__text"
                         style={{
                             opacity: textOpacity,
@@ -157,21 +172,30 @@ export default function Switzerland({
                             willChange: "transform, opacity",
                         }}
                     >
-                        <p>{content.switzerland.paragraph1}</p>
-                        <p>{content.switzerland.paragraph2}</p>
-                        <p>{content.switzerland.paragraph3}</p>
-                    </motion.div>
+                        <p>
+                            {content.switzerland.paragraph1}
+                        </p>
+
+                        <p>
+                            {content.switzerland.paragraph2}
+                        </p>
+
+                        <p>
+                            {content.switzerland.paragraph3}
+                        </p>
+                    </m.div>
+
                 </div>
 
-                <motion.div
+
+                <m.div
                     className="switzerland__closing"
                     style={{
                         opacity: closingOpacity,
-                        willChange: "opacity",
                     }}
                 >
                     {content.switzerland.closing}
-                </motion.div>
+                </m.div>
 
             </div>
         </section>

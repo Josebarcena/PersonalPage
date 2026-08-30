@@ -43,12 +43,6 @@
 
     overflow: hidden;
 
-    /*
-     * Horizontal fade:
-     *
-     * invisible → photograph
-     */
-
     -webkit-mask-image: linear-gradient(
             to right,
             transparent 0%,
@@ -384,7 +378,7 @@
     border: 0;
 
     background: transparent;
-    color: inherit;
+    color: rgba(17, 17, 17, 0.72);
 
     font: inherit;
     font-size: clamp(9px, 0.8vw, 12px);
@@ -393,14 +387,12 @@
     letter-spacing: 0.12em;
 
     cursor: pointer;
-
-    opacity: 0.45;
-
     transition: opacity 180ms ease;
 }
 
 .hero__index-button:hover {
-    opacity: 1;
+    color: rgba(17, 17, 17, 1);
+    transform: translateX(2px);
 }
 
 
@@ -475,6 +467,9 @@
         width: 70%;
     }
 
+    .hero__portrait img {
+        object-position: 76% center;
+    }
     .hero__content {
         width: 48vw;
     }

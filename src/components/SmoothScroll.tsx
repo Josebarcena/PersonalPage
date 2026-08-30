@@ -11,9 +11,7 @@ import type { RefObject } from "react";
 interface UseSmoothScrollProgressOptions {
     target: RefObject<HTMLElement | null>;
     container?: RefObject<HTMLElement | null>;
-
     offset?: UseScrollOptions["offset"];
-
     stiffness?: number;
     damping?: number;
     mass?: number;

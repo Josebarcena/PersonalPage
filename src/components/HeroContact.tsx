@@ -1,5 +1,3 @@
-
-
 export default function HeroContact() {
     return (
         <div className="hero-contact">

@@ -1,28 +1,28 @@
 import {
     lazy,
     Suspense,
+    useEffect,
     useState,
 } from "react";
-
 
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-const TptpProject = lazy(() => import("./pages/TptpProject"));
-const LlmInferenceProject = lazy(() => import("./pages/LlmInferenceProject"));
-
 import { en } from "./content/en";
-import { es } from "./content/es";
-import { fr } from "./content/fr";
 
-import type { Language, SiteContent } from "./content/types";
+import type {
+    Language,
+    SiteContent,
+} from "./content/types";
 
 
-const content: Record<Language, SiteContent> = {
-    en,
-    es,
-    fr,
-};
+const TptpProject = lazy(() =>
+    import("./pages/TptpProject")
+);
+
+const LlmInferenceProject = lazy(() =>
+    import("./pages/LlmInferenceProject")
+);
 
 
 function App() {
@@ -30,7 +30,55 @@ function App() {
     const [language, setLanguage] =
         useState<Language>("en");
 
-    const text: SiteContent = content[language];
+    const [text, setText] =
+        useState<SiteContent>(en);
+
+
+    useEffect(() => {
+
+        if (language === "en") {
+            setText(en);
+            return;
+        }
+
+        let active = true;
+
+
+        async function loadContent() {
+
+            let nextContent: SiteContent;
+
+            if (language === "es") {
+
+                const { es } =
+                    await import("./content/es");
+
+                nextContent = es;
+
+            } else {
+
+                const { fr } =
+                    await import("./content/fr");
+
+                nextContent = fr;
+            }
+
+
+            if (active) {
+                setText(nextContent);
+            }
+        }
+
+
+        loadContent();
+
+
+        return () => {
+            active = false;
+        };
+
+    }, [language]);
+
 
     return (
         <Suspense fallback={null}>
@@ -47,6 +95,7 @@ function App() {
                     }
                 />
 
+
                 <Route
                     path="/work/tptp-pvs"
                     element={
@@ -55,6 +104,7 @@ function App() {
                         />
                     }
                 />
+
 
                 <Route
                     path="/work/llm-inference"
@@ -69,5 +119,6 @@ function App() {
         </Suspense>
     );
 }
+
 
 export default App;

@@ -8,24 +8,35 @@ import {
 
 import {
     AnimatePresence,
-    motion,
+    m,
 } from "motion/react";
 
 import { projects } from "../data/projects";
-import type {  SiteContent,
-    Language,} from "../content/types";
+
+import type {
+    Language,
+    SiteContent,
+} from "../content/types";
 
 import CodeBackground from "../components/CodeBackground";
-
-const StoryOverlay = lazy(() => import("../components/StoryOverlay"));
-
 import ProjectVisual from "./ProjectVisual";
 
-const LlmInferenceProject = lazy(() => import("../pages/LlmInferenceProject"));
-const TptpProject = lazy(() => import("../pages/TptpProject"));
+import "../styles/projects.css";
+import "../styles/projects/project-responsive.css";
 
-import "../styles/projects.css"
-import "../styles/projects/project-responsive.css"
+
+const StoryOverlay = lazy(() =>
+    import("../components/StoryOverlay")
+);
+
+const LlmInferenceProject = lazy(() =>
+    import("../pages/LlmInferenceProject")
+);
+
+const TptpProject = lazy(() =>
+    import("../pages/TptpProject")
+);
+
 
 interface ProjectsProps {
     content: SiteContent;
@@ -46,6 +57,7 @@ export default function Projects({
     const overlayScrollRef =
         useRef<HTMLDivElement>(null);
 
+
     useEffect(() => {
 
         if (!openProject) {
@@ -63,6 +75,8 @@ export default function Projects({
         };
 
     }, [openProject]);
+
+
     const renderProjectStory = () => {
 
         switch (openProject) {
@@ -104,6 +118,8 @@ export default function Projects({
                     </h2>
 
                 </header>
+
+
                 <div className="projects__list">
 
                     {projects.map((project) => {
@@ -112,8 +128,7 @@ export default function Projects({
                             content.work.projects[project.id];
 
                         return (
-
-                            <motion.article
+                            <m.article
                                 key={project.id}
                                 className={`project project--${project.id}`}
                                 initial={{
@@ -136,6 +151,8 @@ export default function Projects({
                                 {project.id === "tptp-pvs" && (
                                     <CodeBackground variant="tptp" />
                                 )}
+
+
                                 <div className="project__meta">
 
                                     <span className="project__number">
@@ -153,6 +170,8 @@ export default function Projects({
                                     </div>
 
                                 </div>
+
+
                                 <div className="project__content">
 
                                     <span className="project__eyebrow">
@@ -176,7 +195,6 @@ export default function Projects({
 
 
                                     {project.id === "tptp-pvs" && (
-
                                         <div className="project__details">
 
                                             <span>PARSING</span>
@@ -186,7 +204,6 @@ export default function Projects({
                                             <span>CODE GENERATION</span>
 
                                         </div>
-
                                     )}
 
 
@@ -197,6 +214,8 @@ export default function Projects({
                                     )}
 
                                 </div>
+
+
                                 <div className="project__visual">
 
                                     <ProjectVisual
@@ -204,6 +223,8 @@ export default function Projects({
                                     />
 
                                 </div>
+
+
                                 <div className="project__links">
 
                                     {project.route && (
@@ -239,33 +260,29 @@ export default function Projects({
 
                                 </div>
 
-                            </motion.article>
+                            </m.article>
                         );
                     })}
 
                 </div>
 
             </section>
+
+
             <AnimatePresence>
                 {openProject && (
-
                     <Suspense fallback={null}>
-                        <AnimatePresence>
-                            {openProject && (
-                                <StoryOverlay
-                                    onClose={() =>
-                                        setOpenProject(null)
-                                    }
-                                    scrollRef={overlayScrollRef}
-                                    language={language}
-                                    setLanguage={setLanguage}
-                                >
-                                    {renderProjectStory()}
-                                </StoryOverlay>
-                            )}
-                        </AnimatePresence>
+                        <StoryOverlay
+                            onClose={() =>
+                                setOpenProject(null)
+                            }
+                            scrollRef={overlayScrollRef}
+                            language={language}
+                            setLanguage={setLanguage}
+                        >
+                            {renderProjectStory()}
+                        </StoryOverlay>
                     </Suspense>
-
                 )}
             </AnimatePresence>
         </>

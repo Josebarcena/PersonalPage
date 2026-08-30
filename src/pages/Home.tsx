@@ -27,13 +27,8 @@ import type {
 } from "../content/types";
 
 
-const Story = lazy(() =>
-    import("../sections/Story")
-);
-
-const Switzerland = lazy(() =>
-    import("../sections/Switzerland")
-);
+const Story = lazy(() => import("../sections/Story"));
+const Switzerland = lazy(() => import("../sections/Switzerland"));
 
 
 interface HomeProps {

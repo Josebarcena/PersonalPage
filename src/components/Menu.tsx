@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, m } from "motion/react";
 import { useEffect } from "react";
 
 import type { SiteContent } from "../content/types";
@@ -68,7 +68,7 @@ export default function Menu({
         <AnimatePresence>
 
             {open && (
-                <motion.div
+                <m.div
                     className="menu"
                     initial={{
                         x: "100%",
@@ -182,7 +182,7 @@ export default function Menu({
 
                     </footer>
 
-                </motion.div>
+                </m.div>
             )}
 
         </AnimatePresence>

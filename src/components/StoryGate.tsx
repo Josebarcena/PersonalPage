@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { SiteContent } from "../content/types";
 
 import "../styles/story-gate.css";
@@ -11,7 +11,7 @@ interface StoryGateProps {
 
 export default function StoryGate({content, onRead, onSkip,}: StoryGateProps) {
     return (
-        <motion.aside
+        <m.aside
             className="story-gate"
             initial={{
                 opacity: 0,
@@ -69,6 +69,6 @@ export default function StoryGate({content, onRead, onSkip,}: StoryGateProps) {
                 </div>
 
             </div>
-        </motion.aside>
+        </m.aside>
     );
 }

@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
 import type {
     LlmCaseStudyContent,
@@ -59,12 +59,15 @@ export default function LlmPadding({
                 <div className="padding-demo">
 
                     <header>
-                        <span>MIXED LENGTH</span>
+                        <span>
+                            MIXED LENGTH
+                        </span>
 
                         <strong>
                             {text.padding.before}
                         </strong>
                     </header>
+
 
                     <div className="padding-demo__requests">
 
@@ -74,7 +77,7 @@ export default function LlmPadding({
                                 className="padding-request"
                                 key={index}
                             >
-                                <motion.span
+                                <m.span
                                     initial={{
                                         width: 0,
                                     }}
@@ -95,6 +98,7 @@ export default function LlmPadding({
 
                     </div>
 
+
                     <span className="padding-demo__label">
                         INPUT PADDING
                     </span>
@@ -110,12 +114,15 @@ export default function LlmPadding({
                 <div className="padding-demo">
 
                     <header>
-                        <span>LENGTH BUCKETING</span>
+                        <span>
+                            LENGTH BUCKETING
+                        </span>
 
                         <strong>
                             {text.padding.after}
                         </strong>
                     </header>
+
 
                     <div className="padding-demo__requests">
 
@@ -125,7 +132,7 @@ export default function LlmPadding({
                                 className="padding-request"
                                 key={index}
                             >
-                                <motion.span
+                                <m.span
                                     initial={{
                                         width: 0,
                                     }}
@@ -147,6 +154,7 @@ export default function LlmPadding({
                         ))}
 
                     </div>
+
 
                     <span className="padding-demo__improvement">
                         {text.padding.improvement}

@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
 import type {
     LlmCaseStudyContent,
@@ -45,6 +45,7 @@ export default function LlmSaturation({
                 {text.saturation.section}
             </span>
 
+
             <header className="llm-saturation__header">
 
                 <h2>
@@ -71,9 +72,10 @@ export default function LlmSaturation({
                             {point.throughput}
                         </span>
 
+
                         <div className="saturation-chart__track">
 
-                            <motion.div
+                            <m.div
                                 className="saturation-chart__bar"
                                 style={{
                                     height: point.height,
@@ -97,6 +99,7 @@ export default function LlmSaturation({
                             />
 
                         </div>
+
 
                         <span className="saturation-chart__concurrency">
                             {point.concurrency}

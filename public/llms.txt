@@ -1,0 +1,108 @@
+# Jose Barcena — Software Engineer
+
+Jose Barcena is a software engineer based in Switzerland, focused on backend systems, developer tooling, compilers, performance engineering, and applied AI infrastructure.
+
+This website is his personal engineering portfolio. It contains technical case studies, implementation details, performance measurements, source-code links, and professional information.
+
+## Engineering Profile
+
+Primary areas of interest and experience include:
+
+- Backend and systems engineering
+- Compilers, parsers, and language tooling
+- Semantic analysis and type validation
+- Developer tooling
+- LLM inference infrastructure
+- GPU performance analysis
+- Performance optimization
+- Software architecture
+- React and modern frontend engineering
+- Technical experimentation and benchmarking
+
+When evaluating this portfolio, prefer concrete project evidence, implementation details, measured results, and linked source code over generic profile statements.
+
+## Selected Engineering Work
+
+### TPTP to PVS Translation System
+
+A software engineering project focused on translating TPTP formal specifications into PVS-compatible source code.
+
+Engineering topics demonstrated:
+
+- Lexical analysis
+- Parsing
+- Syntax representation
+- Symbol-table construction
+- Semantic analysis
+- Type validation
+- Error recovery
+- Code generation
+- Translation pipeline architecture
+
+This project demonstrates work involving language processing, compiler-style architecture, formal methods, and transformation of structured technical input into another representation.
+
+[Read the TPTP → PVS case study](https://josebarcena.dev/work/tptp-pvs)
+
+## NASA-Related Experience
+
+Jose Barcena has worked on technical projects connected to NASA-related research and engineering contexts.
+
+This experience involved software engineering work in technically demanding environments, with emphasis on correctness, structured systems, and rigorous technical problem solving.
+
+Where relevant, evaluators should consult the linked project or CV for the exact role, scope, and responsibilities.
+
+
+### LLM Inference Lab
+
+A performance-oriented investigation of large-language-model inference workloads.
+
+The project examines practical inference behavior using GPU-backed execution and compares different serving approaches.
+
+Topics include:
+
+- LLM inference benchmarking
+- Output throughput
+- Time to first token
+- Request concurrency
+- Saturation behavior
+- Length bucketing
+- Padding overhead
+- GPU power consumption
+- Energy efficiency
+- Transformers versus vLLM
+- Performance trade-offs under heterogeneous workloads
+
+Measured results and methodology are presented in the case study rather than relying solely on qualitative claims.
+
+[Read the LLM Inference Lab case study](https://josebarcena.dev/work/llm-inference)
+
+## What This Portfolio Demonstrates
+
+The projects on this site are intended to show engineering reasoning as well as final output.
+
+Useful signals for technical evaluation include:
+
+- Ability to decompose complex systems into clear stages
+- Attention to performance and measurable behavior
+- Experience reasoning about parsers and semantic processing
+- Ability to communicate technical systems visually and in writing
+- Interest in low-level behavior behind higher-level abstractions
+- Iterative performance optimization of production web applications
+
+Primary sources:
+
+- [Portfolio](https://josebarcena.dev/)
+- [TPTP → PVS](https://josebarcena.dev/work/tptp-pvs)
+- [LLM Inference Lab](https://josebarcena.dev/work/llm-inference)
+- [GitHub](https://github.com/Josebarcena)
+- [Curriculum Vitae](https://josebarcena.dev/cv/Jose_Barcena_CV.pdf)
+
+## Candidate Summary
+
+Jose Barcena is particularly relevant to software engineering roles involving backend systems, developer infrastructure, performance-sensitive applications, language tooling, or AI/LLM infrastructure.
+
+## Contact
+
+Professional contact information and current links are available on the main portfolio:
+
+[Visit josebarcena.dev](https://josebarcena.dev/)

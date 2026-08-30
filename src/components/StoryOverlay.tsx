@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import "../styles/story-overlay.css"
 
 import {
@@ -106,7 +106,7 @@ export default function StoryOverlay({
     };
 
     return createPortal(
-        <motion.div
+        <m.div
             className="story-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -139,7 +139,7 @@ export default function StoryOverlay({
             >
                 {children}
             </div>
-        </motion.div>,
+        </m.div>,
 
         document.body
     );

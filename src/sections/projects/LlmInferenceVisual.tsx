@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
 const metrics = [
     {
@@ -19,13 +19,16 @@ const metrics = [
     },
 ];
 
+
 export default function LlmInferenceVisual() {
 
     return (
         <div className="llm-visual">
 
             <header className="llm-visual__header">
-                <span>LIVE INFERENCE</span>
+                <span>
+                    LIVE INFERENCE
+                </span>
 
                 <span className="llm-visual__status">
                     <span className="llm-visual__status-dot" />
@@ -40,7 +43,8 @@ export default function LlmInferenceVisual() {
                     OUTPUT THROUGHPUT
                 </span>
 
-                <motion.div
+
+                <m.div
                     className="llm-visual__throughput"
                     initial={{
                         opacity: 0,
@@ -59,9 +63,14 @@ export default function LlmInferenceVisual() {
                         ease: [0.22, 1, 0.36, 1],
                     }}
                 >
-                    <strong>4,405</strong>
-                    <span>TOK / S</span>
-                </motion.div>
+                    <strong>
+                        4,405
+                    </strong>
+
+                    <span>
+                        TOK / S
+                    </span>
+                </m.div>
 
             </div>
 
@@ -73,7 +82,7 @@ export default function LlmInferenceVisual() {
                     preserveAspectRatio="none"
                     aria-hidden="true"
                 >
-                    <motion.path
+                    <m.path
                         d="
                             M 0 105
                             C 45 104, 60 92, 95 90
@@ -104,12 +113,14 @@ export default function LlmInferenceVisual() {
                     />
                 </svg>
 
+
                 <div className="llm-visual__chart-axis">
                     <span>32</span>
                     <span>64</span>
                     <span>128</span>
                     <span>192</span>
                 </div>
+
 
                 <span className="llm-visual__chart-caption">
                     CONCURRENCY
@@ -122,7 +133,7 @@ export default function LlmInferenceVisual() {
 
                 {metrics.map((metric, index) => (
 
-                    <motion.div
+                    <m.div
                         className="llm-visual__metric"
                         key={metric.label}
                         initial={{
@@ -148,7 +159,7 @@ export default function LlmInferenceVisual() {
                         <strong>
                             {metric.value}
                         </strong>
-                    </motion.div>
+                    </m.div>
 
                 ))}
 
@@ -158,7 +169,9 @@ export default function LlmInferenceVisual() {
             <div className="llm-visual__comparison">
 
                 <div>
-                    <span>TRANSFORMERS</span>
+                    <span>
+                        TRANSFORMERS
+                    </span>
 
                     <strong>
                         1,616
@@ -168,11 +181,17 @@ export default function LlmInferenceVisual() {
                         TOK / S
                     </small>
 
-                    <motion.div
+                    <m.div
                         className="llm-visual__bar"
-                        initial={{ scaleX: 0 }}
-                        whileInView={{ scaleX: 0.367 }}
-                        viewport={{ once: true }}
+                        initial={{
+                            scaleX: 0,
+                        }}
+                        whileInView={{
+                            scaleX: 0.367,
+                        }}
+                        viewport={{
+                            once: true,
+                        }}
                         transition={{
                             duration: 0.8,
                             delay: 0.3,
@@ -182,7 +201,9 @@ export default function LlmInferenceVisual() {
 
 
                 <div>
-                    <span>vLLM</span>
+                    <span>
+                        vLLM
+                    </span>
 
                     <strong>
                         4,405
@@ -192,11 +213,17 @@ export default function LlmInferenceVisual() {
                         TOK / S
                     </small>
 
-                    <motion.div
+                    <m.div
                         className="llm-visual__bar"
-                        initial={{ scaleX: 0 }}
-                        whileInView={{ scaleX: 1 }}
-                        viewport={{ once: true }}
+                        initial={{
+                            scaleX: 0,
+                        }}
+                        whileInView={{
+                            scaleX: 1,
+                        }}
+                        viewport={{
+                            once: true,
+                        }}
                         transition={{
                             duration: 0.8,
                             delay: 0.45,
@@ -208,8 +235,13 @@ export default function LlmInferenceVisual() {
 
 
             <footer className="llm-visual__footer">
-                <span>HETEROGENEOUS WORKLOAD</span>
-                <span>02 / LAB</span>
+                <span>
+                    HETEROGENEOUS WORKLOAD
+                </span>
+
+                <span>
+                    02 / LAB
+                </span>
             </footer>
 
         </div>

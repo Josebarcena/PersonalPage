@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
 export default function TptpVisual() {
 
@@ -18,7 +18,7 @@ export default function TptpVisual() {
 
                 {items.map((item, index) => (
 
-                    <motion.div
+                    <m.div
                         key={item}
                         className="tptp-visual__step"
                         initial={{
@@ -39,7 +39,6 @@ export default function TptpVisual() {
                             ease: [0.22, 1, 0.36, 1],
                         }}
                     >
-
                         <span className="tptp-visual__step-number">
                             {String(index + 1).padStart(2, "0")}
                         </span>
@@ -51,8 +50,7 @@ export default function TptpVisual() {
                         <span className="tptp-visual__step-arrow">
                             ↓
                         </span>
-
-                    </motion.div>
+                    </m.div>
 
                 ))}
 

@@ -1,5 +1,4 @@
-import LlmInferenceVisual
-    from "../../projects/LlmInferenceVisual";
+import LlmInferenceVisual from "../../projects/LlmInferenceVisual";
 
 import type {LlmCaseStudyContent,} from "../../../content/types";
 

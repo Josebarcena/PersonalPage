@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
 import type {
     LlmCaseStudyContent,
@@ -59,7 +59,7 @@ export default function LlmComparison({
             </header>
 
 
-            <motion.div
+            <m.div
                 className="llm-comparison__result"
                 initial={{
                     opacity: 0,
@@ -78,7 +78,7 @@ export default function LlmComparison({
                 }}
             >
                 2.73×
-            </motion.div>
+            </m.div>
 
 
             <div className="backend-comparison">

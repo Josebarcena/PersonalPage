@@ -1,10 +1,16 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
-import type {TptpCaseStudyContent,} from "../../../content/types.ts";
-import "../../../styles/projects/Tptp/tptp-architecture.css"
+import type {
+    TptpCaseStudyContent,
+} from "../../../content/types";
+
+import "../../../styles/projects/Tptp/tptp-architecture.css";
+
+
 interface Props {
     text: TptpCaseStudyContent;
 }
+
 
 const pipeline = [
     "TPTP SOURCE",
@@ -18,6 +24,7 @@ const pipeline = [
     "PVS SOURCE",
 ];
 
+
 export default function TptpArchitecture({
                                              text,
                                          }: Props) {
@@ -28,6 +35,7 @@ export default function TptpArchitecture({
             <div className="case-section__index case-section__index--light">
                 {text.system.section}
             </div>
+
 
             <div className="case-architecture__header">
 
@@ -41,11 +49,12 @@ export default function TptpArchitecture({
 
             </div>
 
+
             <div className="architecture-pipeline">
 
                 {pipeline.map((stage, index) => (
 
-                    <motion.div
+                    <m.div
                         className="architecture-pipeline__stage"
                         key={stage}
                         initial={{
@@ -80,7 +89,7 @@ export default function TptpArchitecture({
                             </span>
                         )}
 
-                    </motion.div>
+                    </m.div>
 
                 ))}
 

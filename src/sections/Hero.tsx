@@ -1,11 +1,13 @@
 import {
-    motion,
+    m,
     useTransform,
 } from "motion/react";
 
 import { useRef } from "react";
+
 import type { SiteContent } from "../content/types";
-import HeroContact from "../components/HeroContact.tsx";
+
+import HeroContact from "../components/HeroContact";
 import { useSmoothScrollProgress } from "../components/SmoothScroll";
 
 import "../styles/hero.css";
@@ -28,6 +30,7 @@ export default function Hero({
         target: heroRef,
         offset: ["start start", "end start"],
     });
+
 
     const contentOpacity = useTransform(
         scrollProgress,
@@ -52,6 +55,8 @@ export default function Hero({
         [0, 0.16],
         [1, 0]
     );
+
+
     return (
         <section
             ref={heroRef}
@@ -59,7 +64,7 @@ export default function Hero({
         >
             <div className="hero__sticky">
 
-                <motion.div
+                <m.div
                     className="hero__portrait"
                     style={{
                         scale: portraitScale,
@@ -68,6 +73,7 @@ export default function Hero({
                     }}
                 >
                     <picture>
+
                         <source
                             media="(max-width: 767px)"
                             srcSet="/images/portrait-mobile.avif"
@@ -88,11 +94,12 @@ export default function Hero({
                             fetchPriority="high"
                             decoding="async"
                         />
+
                     </picture>
-                </motion.div>
+                </m.div>
 
 
-                <motion.header
+                <m.header
                     className="hero__header"
                     style={{
                         opacity: chromeOpacity,
@@ -102,20 +109,21 @@ export default function Hero({
                         <span>JOSE BARCENA</span>
 
                         <button
+                            type="button"
                             className="hero__index-button"
                             onClick={openMenu}
                         >
                             INDEX +
                         </button>
+
                     </div>
-                </motion.header>
+                </m.header>
 
 
-                <motion.div
+                <m.div
                     className="hero__content"
                     style={{
                         opacity: contentOpacity,
-                        willChange: "opacity",
                     }}
                 >
                     <h1 className="hero__title">
@@ -126,6 +134,7 @@ export default function Hero({
                         BARCENA
                     </h1>
 
+
                     <div className="hero__intro">
                         <p>
                             {content.hero.role}
@@ -134,27 +143,23 @@ export default function Hero({
                         </p>
                     </div>
 
+
                     <HeroContact />
-                </motion.div>
+
+                </m.div>
 
 
-                <motion.footer
+                <m.footer
                     className="hero__footer"
                     style={{
                         opacity: chromeOpacity,
-                        willChange: "opacity",
                     }}
                 >
-                    <span>
-                        {content.hero.location}
-                    </span>
-
-                    <span className="hero__scroll">
-                        {content.hero.scroll}
-                    </span>
-
+                    <span>{content.hero.location}</span>
+                    <span className="hero__scroll">{content.hero.scroll}</span>
                     <span>2026</span>
-                </motion.footer>
+
+                </m.footer>
 
             </div>
         </section>
