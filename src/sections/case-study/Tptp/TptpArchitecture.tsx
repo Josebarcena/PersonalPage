@@ -1,9 +1,7 @@
 import { motion } from "motion/react";
 
-import type {
-    TptpCaseStudyContent,
-} from "../../../content/types.ts";
-
+import type {TptpCaseStudyContent,} from "../../../content/types.ts";
+import "../../../styles/projects/Tptp/tptp-architecture.css"
 interface Props {
     text: TptpCaseStudyContent;
 }

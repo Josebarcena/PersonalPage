@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import type { SiteContent } from "../content/types";
 
+import "../styles/story-gate.css";
 interface StoryGateProps {
     content: SiteContent;
     onRead: () => void;

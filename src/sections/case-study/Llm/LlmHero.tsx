@@ -1,9 +1,7 @@
 import LlmInferenceVisual
     from "../../projects/LlmInferenceVisual";
 
-import type {
-    LlmCaseStudyContent,
-} from "../../../content/types";
+import type {LlmCaseStudyContent,} from "../../../content/types";
 
 
 interface Props {

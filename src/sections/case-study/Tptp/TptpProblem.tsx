@@ -1,12 +1,9 @@
 import { motion } from "motion/react";
 
-import type {
-    TptpCaseStudyContent,
-} from "../../../content/types.ts";
+import type {TptpCaseStudyContent,} from "../../../content/types.ts";
+import "../../../styles/projects/Tptp/tptp-problem.css"
 
-interface Props {
-    text: TptpCaseStudyContent;
-}
+interface Props {text: TptpCaseStudyContent;}
 
 export default function TptpProblem({ text }: Props) {
 

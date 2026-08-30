@@ -1,0 +1,150 @@
+/* =========================================================
+   OUTCOME
+   ========================================================= */
+
+.case-outcome {
+    position: relative;
+
+    min-height: 110vh;
+
+    padding:
+            15vh
+            var(--page-padding)
+            var(--page-padding);
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--foreground);
+    color: var(--background);
+}
+
+.case-outcome__title {
+    max-width: 900px;
+
+    margin:
+            10vh
+            0
+            0;
+
+    font-size: clamp(64px, 7.5vw, 128px);
+
+    line-height: 0.82;
+    letter-spacing: -0.065em;
+}
+
+.case-outcome__content {
+    margin-top: 8vh;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(320px, 500px)
+        1fr;
+
+    gap: 10vw;
+}
+
+.case-outcome__copy {
+    font-size: clamp(16px, 1.1vw, 19px);
+
+    line-height: 1.55;
+}
+
+.case-outcome__copy p {
+    margin: 0;
+}
+
+.case-outcome__copy p + p {
+    margin-top: 28px;
+}
+
+.case-outcome__meta {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-content: flex-start;
+
+    gap:
+            12px
+            22px;
+
+    font-size: clamp(10px, 0.7vw, 12px);
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.55;
+}
+
+.case-outcome__footer {
+    margin-top: auto;
+    padding-top: 14vh;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.case-outcome__footer a {
+    padding-bottom: 4px;
+
+    color: inherit;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    text-decoration: none;
+
+    border-bottom:
+            1px solid
+            currentColor;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+    .case-outcome {
+        width: 100%;
+
+        padding:
+                60px
+                20px
+                80px;
+
+        overflow: hidden;
+    }
+
+    .case-outcome__title {
+        width: 100%;
+        max-width: 100%;
+
+        margin:
+                140px
+                0
+                90px;
+
+        font-size: clamp(48px, 14vw, 58px);
+        font-weight: 700;
+
+        line-height: 0.82;
+        letter-spacing: -0.065em;
+
+        white-space: normal;
+
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .case-outcome__content {
+        grid-template-columns: 1fr;
+    }
+}

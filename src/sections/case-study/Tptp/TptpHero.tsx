@@ -1,9 +1,7 @@
 import TptpVisual from "../../projects/TptpVisual.tsx";
 
-import type {
-    TptpCaseStudyContent,
-} from "../../../content/types.ts";
-
+import type {TptpCaseStudyContent,} from "../../../content/types.ts";
+import "../../../styles/projects/Tptp/tptp-hero.css"
 
 interface TptpHeroProps {
     text: TptpCaseStudyContent;

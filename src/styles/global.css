@@ -1,6 +1,4 @@
 @import "./variables.css";
-@import "./story-gate.css";
-
 
 /* =========================================================
    RESET / GLOBAL
@@ -132,10 +130,5 @@ a {
 @media (max-width: 1000px) {
     .language-switcher {
         top: 61px;
-    }
-    .menu__footer {
-        padding-bottom: calc(
-                16px + env(safe-area-inset-bottom)
-        );
     }
 }

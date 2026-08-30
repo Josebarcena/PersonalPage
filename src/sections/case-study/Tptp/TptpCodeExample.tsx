@@ -1,12 +1,9 @@
 import { motion } from "motion/react";
 
-import type {
-    TptpCaseStudyContent,
-} from "../../../content/types.ts";
+import type {TptpCaseStudyContent,} from "../../../content/types.ts";
+import "../../../styles/projects/Tptp/tptp-code-example.css"
 
-interface Props {
-    text: TptpCaseStudyContent;
-}
+interface Props {text: TptpCaseStudyContent;}
 
 const tptpCode = `fof(
     socrates_is_mortal,

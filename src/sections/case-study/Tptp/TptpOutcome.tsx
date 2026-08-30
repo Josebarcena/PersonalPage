@@ -1,10 +1,7 @@
-import type {
-    TptpCaseStudyContent,
-} from "../../../content/types.ts";
+import type {TptpCaseStudyContent,} from "../../../content/types.ts";
 
-interface Props {
-    text: TptpCaseStudyContent;
-}
+interface Props {text: TptpCaseStudyContent;}
+import "../../../styles/projects/Tptp/tptp-outcome.css"
 
 export default function TptpOutcome({
                                         text,

@@ -1,4 +1,5 @@
 import type {SiteContent } from "../content/types";
+import "../styles/projects/Tptp/tptp-project.css";
 
 import TptpHero from "../sections/case-study/Tptp/TptpHero.tsx";
 import TptpProblem from "../sections/case-study/Tptp/TptpProblem.tsx";
@@ -7,7 +8,6 @@ import TptpCodeExample from "../sections/case-study/Tptp/TptpCodeExample.tsx";
 import TptpEngineering from "../sections/case-study/Tptp/TptpEngineering.tsx";
 import TptpOutcome from "../sections/case-study/Tptp/TptpOutcome.tsx";
 
-import "../styles/case-study.css";
 
 interface TptpProjectProps {
     content: SiteContent;

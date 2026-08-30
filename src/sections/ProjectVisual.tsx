@@ -4,7 +4,8 @@ import {
 } from "react";
 
 import "../styles/projects.css";
-
+import "../styles/projects/project-responsive.css"
+import "../styles/projects/llm/llm-inference-visual.css"
 import type {ProjectVisual as ProjectVisualType,} from "../data/projects";
 
 const TptpVisual = lazy(() => import("./projects/TptpVisual"));

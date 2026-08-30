@@ -66,7 +66,6 @@
 }
 
 @keyframes llm-status-pulse {
-
     0%,
     100% {
         opacity: 0.3;
@@ -75,7 +74,6 @@
     50% {
         opacity: 1;
     }
-
 }
 
 
@@ -313,6 +311,11 @@
     opacity: 0.3;
 }
 
+
+/* =========================================================
+   DECORATIVE BENCHMARK
+   ========================================================= */
+
 .project__benchmark-result {
     position: absolute;
 
@@ -349,4 +352,101 @@
     letter-spacing: 0.12em;
 
     opacity: 0.18;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1250px) {
+    .llm-visual {
+        padding: 28px 32px 30px;
+    }
+
+    .llm-visual__primary {
+        margin-top: 28px;
+    }
+
+    .llm-visual__throughput {
+        gap: 10px;
+    }
+
+    .llm-visual__throughput strong {
+        font-size: clamp(38px, 7vw, 62px);
+    }
+
+    .llm-visual__throughput span {
+        font-size: 8px;
+    }
+
+    .llm-visual__chart {
+        margin-top: 22px;
+        height: 100px;
+    }
+
+    .llm-visual__chart svg {
+        height: 72px;
+    }
+
+    .llm-visual__metrics {
+        margin-top: 28px;
+    }
+
+    .llm-visual__metric {
+        gap: 12px;
+    }
+
+    .llm-visual__comparison {
+        margin-top: 22px;
+        gap: 18px;
+    }
+
+    .llm-visual__comparison strong {
+        font-size: 16px;
+    }
+
+    .llm-visual__footer {
+        padding-top: 16px;
+    }
+
+    .project__benchmark-result {
+        right: 12px;
+        bottom: 18px;
+        gap: 10px;
+    }
+
+    .project__benchmark-result strong {
+        font-size: clamp(56px, 12vw, 120px);
+    }
+
+    .project__benchmark-result span {
+        font-size: 6px;
+        margin-bottom: 2px;
+    }
+}
+
+@media (max-width: 700px) {
+    .llm-visual__metrics,
+    .llm-visual__comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .llm-visual__metric:nth-child(odd) {
+        padding-right: 0;
+    }
+
+    .llm-visual__metric:nth-child(even) {
+        padding-left: 0;
+        border-left: none;
+    }
+
+    .llm-visual__comparison > div {
+        grid-template-columns: 1fr auto;
+    }
+
+    .llm-visual__footer {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
 }

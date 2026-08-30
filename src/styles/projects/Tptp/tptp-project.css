@@ -1,0 +1,16 @@
+.case-study {
+    width: 100%;
+    background: var(--background);
+    color: var(--foreground);
+}
+
+.case-section__index {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.case-section__index--light {
+    color: var(--background);
+}

@@ -184,3 +184,11 @@
 
     gap: 28px;
 }
+
+@media (max-width: 1000px) {
+    .menu__footer {
+        padding-bottom: calc(
+                16px + env(safe-area-inset-bottom)
+        );
+    }
+}

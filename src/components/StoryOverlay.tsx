@@ -1,5 +1,6 @@
 import { createPortal } from "react-dom";
 import { motion } from "motion/react";
+import "../styles/story-overlay.css"
 
 import {
     useRef,

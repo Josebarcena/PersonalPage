@@ -1,0 +1,127 @@
+/* =========================================================
+   ARCHITECTURE
+   ========================================================= */
+
+.case-architecture {
+    position: relative;
+
+    min-height: auto;
+
+    padding:
+            9vh
+            var(--page-padding)
+            10vh;
+
+    background: var(--foreground);
+    color: var(--background);
+}
+
+.case-architecture__header {
+    margin-top: 6vh;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(420px, 1.3fr)
+        minmax(300px, 0.55fr);
+
+    gap: 7vw;
+
+    align-items: end;
+}
+
+.case-architecture__header h2 {
+    max-width: 760px;
+
+    margin: 0;
+
+    font-size: clamp(54px, 5.6vw, 98px);
+    font-weight: 700;
+
+    line-height: 0.84;
+    letter-spacing: -0.06em;
+}
+
+
+.case-architecture__header p {
+    max-width: 420px;
+
+    margin: 0;
+
+    font-size: clamp(16px, 1.05vw, 18px);
+
+    line-height: 1.55;
+
+    opacity: 0.68;
+}
+
+
+/* =========================================================
+   ARCHITECTURE PIPELINE
+   ========================================================= */
+
+.architecture-pipeline {
+    width: min(650px, 56vw);
+
+    margin:
+            7vh
+            auto
+            0;
+}
+
+.architecture-pipeline__stage {
+    min-height: 58px;
+
+    display: grid;
+
+    grid-template-columns:
+        46px
+        1fr
+        20px;
+
+    align-items: center;
+
+    border-top:
+            1px solid
+            rgba(244, 243, 239, 0.22);
+}
+
+.architecture-pipeline__stage:last-child {
+    border-bottom:
+            1px solid
+            rgba(244, 243, 239, 0.22);
+}
+
+.architecture-pipeline__number {
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.35;
+}
+
+.architecture-pipeline__name {
+    font-size: clamp(14px, 1.1vw, 19px);
+    font-weight: 600;
+
+    letter-spacing: -0.015em;
+}
+
+.architecture-pipeline__arrow {
+    font-size: 10px;
+
+    text-align: right;
+
+    opacity: 0.35;
+}
+
+@media (max-width: 900px) {
+    .case-architecture__header {
+        grid-template-columns: 1fr;
+    }
+
+    .architecture-pipeline {
+        width: 100%;
+    }
+}

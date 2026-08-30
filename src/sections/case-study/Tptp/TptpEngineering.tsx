@@ -1,6 +1,5 @@
-import type {
-    TptpCaseStudyContent,
-} from "../../../content/types.ts";
+import type {TptpCaseStudyContent,} from "../../../content/types.ts";
+import "../../../styles/projects/Tptp/tptp-engineering.css"
 
 interface Props {
     text: TptpCaseStudyContent;

@@ -1,0 +1,128 @@
+/* =========================================================
+   CODE COMPARISON
+   ========================================================= */
+
+.code-comparison {
+    position: relative;
+
+    padding:
+            9vh
+            var(--page-padding)
+            10vh;
+
+    background: var(--background);
+}
+
+.code-comparison__header {
+    margin-top: 6vh;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(300px, 0.55fr);
+
+    gap: 7vw;
+
+    align-items: end;
+}
+
+.code-comparison__header h2 {
+    margin: 0;
+
+    max-width: 820px;
+
+    font-size: clamp(54px, 5.8vw, 102px);
+    font-weight: 700;
+
+    line-height: 0.84;
+    letter-spacing: -0.06em;
+}
+
+.code-comparison__header p {
+    max-width: 420px;
+
+    margin: 0;
+
+    font-size: clamp(15px, 1.05vw, 18px);
+    line-height: 1.55;
+}
+
+.code-comparison__grid {
+    margin-top: 7vh;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    gap: clamp(28px, 3vw, 52px);
+
+    align-items: center;
+}
+
+.code-panel {
+    min-height: 390px;
+
+    padding: 24px;
+
+    background: var(--foreground);
+    color: var(--background);
+}
+
+.code-panel__header {
+    padding-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom:
+            1px solid
+            rgba(244, 243, 239, 0.2);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+
+    opacity: 0.55;
+}
+
+.code-panel pre {
+    margin: 30px 0 0;
+
+    overflow-x: auto;
+}
+
+.code-panel code {
+    font-family:
+            "SFMono-Regular",
+            Consolas,
+            "Liberation Mono",
+            monospace;
+
+    font-size: clamp(11px, 0.8vw, 14px);
+    line-height: 1.65;
+}
+
+.code-comparison__arrow {
+    font-size: clamp(38px, 4vw, 70px);
+    font-weight: 300;
+}
+
+@media (max-width: 900px) {
+    .code-comparison__header {
+        grid-template-columns: 1fr;
+    }
+
+    .code-comparison__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .code-comparison__arrow {
+        transform: rotate(90deg);
+        text-align: center;
+    }
+}

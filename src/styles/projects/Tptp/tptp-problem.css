@@ -1,0 +1,85 @@
+/* =========================================================
+   PROBLEM
+   ========================================================= */
+
+.case-problem {
+    position: relative;
+
+    min-height: auto;
+
+    padding:
+            9vh
+            var(--page-padding)
+            10vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--background);
+
+    border-top:
+            1px solid
+            rgba(20, 20, 20, 0.16);
+}
+
+.case-problem__title {
+    max-width: 980px;
+
+    margin:
+            7vh
+            0
+            0;
+
+    font-size: clamp(56px, 6.2vw, 110px);
+    font-weight: 700;
+
+    line-height: 0.84;
+    letter-spacing: -0.06em;
+}
+
+.case-problem__bottom {
+    margin-top: clamp(70px, 9vh, 120px);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.8fr)
+        minmax(340px, 0.55fr);
+
+    gap: 8vw;
+
+    align-items: end;
+}
+
+.case-problem__statement {
+    font-size: clamp(24px, 2.4vw, 40px);
+    font-weight: 600;
+
+    letter-spacing: -0.045em;
+}
+
+.case-problem__copy {
+    max-width: 470px;
+
+    justify-self: end;
+
+    font-size: clamp(15px, 1.05vw, 18px);
+
+    line-height: 1.55;
+    letter-spacing: -0.02em;
+}
+
+.case-problem__copy p {
+    margin: 0;
+}
+
+.case-problem__copy p + p {
+    margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+    .case-problem__bottom {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
