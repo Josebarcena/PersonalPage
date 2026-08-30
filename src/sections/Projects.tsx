@@ -1,4 +1,6 @@
 import {
+    lazy,
+    Suspense,
     useEffect,
     useRef,
     useState,
@@ -14,12 +16,13 @@ import type {  SiteContent,
     Language,} from "../content/types";
 
 import CodeBackground from "../components/CodeBackground";
-import StoryOverlay from "../components/StoryOverlay";
+
+const StoryOverlay = lazy(() => import("../components/StoryOverlay"));
 
 import ProjectVisual from "./ProjectVisual";
 
-import LlmInferenceProject from "../pages/LlmInferenceProject";
-import TptpProject from "../pages/TptpProject";
+const LlmInferenceProject = lazy(() => import("../pages/LlmInferenceProject"));
+const TptpProject = lazy(() => import("../pages/TptpProject"));
 
 import "../styles/projects.css"
 import "../styles/projects/project-responsive.css"
@@ -246,16 +249,22 @@ export default function Projects({
             <AnimatePresence>
                 {openProject && (
 
-                    <StoryOverlay
-                        onClose={() =>
-                            setOpenProject(null)
-                        }
-                        scrollRef={overlayScrollRef}
-                        language={language}
-                        setLanguage={setLanguage}
-                    >
-                        {renderProjectStory()}
-                    </StoryOverlay>
+                    <Suspense fallback={null}>
+                        <AnimatePresence>
+                            {openProject && (
+                                <StoryOverlay
+                                    onClose={() =>
+                                        setOpenProject(null)
+                                    }
+                                    scrollRef={overlayScrollRef}
+                                    language={language}
+                                    setLanguage={setLanguage}
+                                >
+                                    {renderProjectStory()}
+                                </StoryOverlay>
+                            )}
+                        </AnimatePresence>
+                    </Suspense>
 
                 )}
             </AnimatePresence>

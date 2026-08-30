@@ -1,10 +1,15 @@
-import { useState } from "react";
+import {
+    lazy,
+    Suspense,
+    useState,
+} from "react";
+
+
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import TptpProject from "./pages/TptpProject";
-import LlmInferenceProject
-    from "./pages/LlmInferenceProject";
+const TptpProject = lazy(() => import("./pages/TptpProject"));
+const LlmInferenceProject = lazy(() => import("./pages/LlmInferenceProject"));
 
 import { en } from "./content/en";
 import { es } from "./content/es";
@@ -28,37 +33,40 @@ function App() {
     const text: SiteContent = content[language];
 
     return (
-        <Routes>
+        <Suspense fallback={null}>
+            <Routes>
 
-            <Route
-                path="/"
-                element={
-                    <Home
-                        content={text}
-                        language={language}
-                        setLanguage={setLanguage}
-                    />
-                }
-            />
+                <Route
+                    path="/"
+                    element={
+                        <Home
+                            content={text}
+                            language={language}
+                            setLanguage={setLanguage}
+                        />
+                    }
+                />
 
-            <Route
-                path="/work/tptp-pvs"
-                element={
-                    <TptpProject
-                        content={text}
-                    />
-                }
-            />
+                <Route
+                    path="/work/tptp-pvs"
+                    element={
+                        <TptpProject
+                            content={text}
+                        />
+                    }
+                />
 
-            <Route
-                path="/work/llm-inference"
-                element={
-                    <LlmInferenceProject
-                        content={text}
-                    />
-                }
-            />
-        </Routes>
+                <Route
+                    path="/work/llm-inference"
+                    element={
+                        <LlmInferenceProject
+                            content={text}
+                        />
+                    }
+                />
+
+            </Routes>
+        </Suspense>
     );
 }
 

@@ -12,9 +12,10 @@ import {
     useScroll,
 } from "motion/react";
 
-import Menu from "../components/Menu";
-import StoryGate from "../components/StoryGate";
-import StoryOverlay from "../components/StoryOverlay";
+const Menu = lazy(() => import("../components/Menu"));
+const StoryGate = lazy(() => import("../components/StoryGate"));
+const StoryOverlay = lazy(() => import("../components/StoryOverlay"));
+
 import LanguageSwitcher from "../components/LanguageSwitcher";
 
 import Hero from "../sections/Hero";
@@ -244,54 +245,59 @@ export default function Home({
                 setLanguage={setLanguage}
             />
 
+            <Suspense fallback={null}>
+                <AnimatePresence>
+                    {gateOpen && (
+                        <StoryGate
+                            content={content}
+                            onRead={openStory}
+                            onSkip={skipStory}
+                        />
+                    )}
+                </AnimatePresence>
+            </Suspense>
 
-            <AnimatePresence>
-                {gateOpen && (
-                    <StoryGate
+            <Suspense fallback={null}>
+                <AnimatePresence>
+                    {storyOpen && (
+                        <StoryOverlay
+                            onClose={closeStory}
+                            scrollRef={storyScrollRef}
+                        >
+                            <Suspense fallback={null}>
+
+                                <Story
+                                    content={content}
+                                    scrollContainer={
+                                        storyScrollRef
+                                    }
+                                />
+
+                                <Switzerland
+                                    content={content}
+                                    scrollContainer={
+                                        storyScrollRef
+                                    }
+                                />
+
+                            </Suspense>
+                        </StoryOverlay>
+                    )}
+                </AnimatePresence>
+            </Suspense>
+
+            <Suspense fallback={null}>
+                {menuOpen && (
+                    <Menu
+                        open={menuOpen}
+                        onClose={() =>
+                            setMenuOpen(false)
+                        }
+                        onOpenStory={openStory}
                         content={content}
-                        onRead={openStory}
-                        onSkip={skipStory}
                     />
                 )}
-            </AnimatePresence>
-
-
-            <AnimatePresence>
-                {storyOpen && (
-                    <StoryOverlay
-                        onClose={closeStory}
-                        scrollRef={storyScrollRef}
-                    >
-                        <Suspense fallback={null}>
-
-                            <Story
-                                content={content}
-                                scrollContainer={
-                                    storyScrollRef
-                                }
-                            />
-
-                            <Switzerland
-                                content={content}
-                                scrollContainer={
-                                    storyScrollRef
-                                }
-                            />
-
-                        </Suspense>
-                    </StoryOverlay>
-                )}
-            </AnimatePresence>
-
-
-            <Menu
-                open={menuOpen}
-                onClose={() =>
-                    setMenuOpen(false)
-                }
-                onOpenStory={openStory}
-                content={content}
-            />
+            </Suspense>
 
         </main>
     );
