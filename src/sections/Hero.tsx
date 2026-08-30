@@ -73,11 +73,17 @@ export default function Hero({
                             type="image/avif"
                         />
 
+                        <source
+                            media="(min-width: 768px)"
+                            srcSet="/images/portrait.avif"
+                            type="image/avif"
+                        />
+
                         <img
                             src="/images/portrait.jpeg"
                             alt="Jose Barcena"
-                            width={1200}
-                            height={1600}
+                            width={1536}
+                            height={2048}
                             fetchPriority="high"
                             decoding="async"
                         />
