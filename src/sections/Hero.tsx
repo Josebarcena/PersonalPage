@@ -66,10 +66,22 @@ export default function Hero({
                         willChange: "transform, opacity",
                     }}
                 >
-                    <img
-                        src="/images/portrait.jpeg"
-                        alt="Jose Barcena"
-                    />
+                    <picture>
+                        <source
+                            media="(max-width: 767px)"
+                            srcSet="/images/portrait-mobile.avif"
+                            type="image/avif"
+                        />
+
+                        <img
+                            src="/images/portrait.jpeg"
+                            alt="Jose Barcena"
+                            width={1200}
+                            height={1600}
+                            fetchPriority="high"
+                            decoding="async"
+                        />
+                    </picture>
                 </motion.div>
 
 
@@ -86,7 +98,7 @@ export default function Hero({
                             className="hero__index-button"
                             onClick={openMenu}
                         >
-                            INDEX
+                            INDEX +
                         </button>
                     </div>
                 </motion.header>

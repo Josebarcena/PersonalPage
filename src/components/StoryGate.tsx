@@ -19,14 +19,18 @@ export default function StoryGate({content, onRead, onSkip,}: StoryGateProps) {
             animate={{
                 opacity: 1,
                 x: 0,
+                transition: {
+                    duration: 0.35,
+                    ease: [0.22, 1, 0.36, 1],
+                },
             }}
             exit={{
                 opacity: 0,
                 x: 80,
-            }}
-            transition={{
-                duration: 0.45,
-                ease: [0.22, 1, 0.36, 1],
+                transition: {
+                    duration: 0.1,
+                    ease: "easeIn",
+                },
             }}
         >
             <div className="story-gate__inner">

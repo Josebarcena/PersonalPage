@@ -141,7 +141,7 @@ export default function Home({
                 window.scrollY - startScroll;
 
             const dismissThreshold =
-                window.innerHeight * 1.75;
+                window.innerHeight;
 
             if (travelled >= dismissThreshold) {
                 setGateOpen(false);

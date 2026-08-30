@@ -97,6 +97,13 @@
     }
     .story-gate__actions button {
         font-size: 9px;
+
+        min-height: 44px;
+        padding: 10px 12px;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -115,16 +122,6 @@
 
     .hero__location-bottom {
         justify-self: start;
-    }
-
-    .hero__scroll {
-        position: static;
-
-        transform: none;
-
-        justify-self: center;
-
-        white-space: nowrap;
     }
 
     .hero__year {
@@ -413,16 +410,6 @@
     .hero__footer > span:last-child {
         display: none;
     }
-
-    .hero__scroll {
-        left: 50%;
-        right: auto;
-
-        transform: translateX(-50%);
-
-        white-space: nowrap;
-    }
-
 
     /* -------------------------
        STORY
