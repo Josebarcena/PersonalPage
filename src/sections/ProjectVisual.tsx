@@ -1,34 +1,46 @@
-import TptpVisual from "./projects/TptpVisual.tsx";
-import LlmInferenceVisual from "./projects/LlmInferenceVisual";
-import SemanticCodeVisual from "./projects/SemanticCodeVisual";
-import "../styles/projects.css"
+import {
+    lazy,
+    Suspense,
+} from "react";
 
-import type {
-    ProjectVisual as ProjectVisualType,
-} from "../data/projects";
+import "../styles/projects.css";
 
+import type {ProjectVisual as ProjectVisualType,} from "../data/projects";
+
+const TptpVisual = lazy(() => import("./projects/TptpVisual"));
+const LlmInferenceVisual = lazy(() => import("./projects/LlmInferenceVisual"));
+const SemanticCodeVisual = lazy(() => import("./projects/SemanticCodeVisual"));
 
 interface ProjectVisualProps {
     visual: ProjectVisualType;
 }
 
-
 export default function ProjectVisual({
                                           visual,
                                       }: ProjectVisualProps) {
 
-    switch (visual) {
+    let content = null;
 
+    switch (visual) {
         case "tptp":
-            return <TptpVisual />;
+            content = <TptpVisual />;
+            break;
 
         case "llm-inference":
-            return <LlmInferenceVisual />;
+            content = <LlmInferenceVisual />;
+            break;
 
         case "semantic-code":
-            return <SemanticCodeVisual />;
-            
+            content = <SemanticCodeVisual />;
+            break;
+
         default:
             return null;
     }
+
+    return (
+        <Suspense fallback={null}>
+            {content}
+        </Suspense>
+    );
 }
